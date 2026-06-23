@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/constants/app_strings.dart';
-
-final _isDarkProvider = StateProvider<bool>((ref) => false);
+import '../../../core/theme/theme_provider.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -10,7 +9,7 @@ class SettingsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final scheme = Theme.of(context).colorScheme;
-    final isDark = ref.watch(_isDarkProvider);
+    final isDark = ref.watch(themeModeProvider) == ThemeMode.dark;
 
     return Scaffold(
       appBar: AppBar(
@@ -43,7 +42,7 @@ class SettingsScreen extends ConsumerWidget {
               color: scheme.onSurfaceVariant,
             ),
             value: isDark,
-            onChanged: (val) => ref.read(_isDarkProvider.notifier).state = val,
+            onChanged: (val) => ref.read(themeModeProvider.notifier).setDark(val),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),

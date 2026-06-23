@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../core/theme/app_colors.dart';
 import '../../../data/mock/mock_data.dart';
 import '../../widgets/list/game_card.dart';
 

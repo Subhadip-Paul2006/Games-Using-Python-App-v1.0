@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_strings.dart';
 import '../../../core/theme/app_colors.dart';
@@ -80,7 +81,7 @@ class _SplashScreenState extends State<SplashScreen>
             end: Alignment.bottomCenter,
             colors: [
               bgColor,
-              accentColor.withOpacity(0.08),
+              accentColor.withValues(alpha: 0.08),
               bgColor,
             ],
           ),
@@ -114,8 +115,8 @@ class _SplashScreenState extends State<SplashScreen>
                               color: accentColor,
                               boxShadow: [
                                 BoxShadow(
-                                  color: accentColor.withOpacity(
-                                    0.4 * _glowPulse.value,
+                                  color: accentColor.withValues(
+                                    alpha: 0.4 * _glowPulse.value,
                                   ),
                                   blurRadius: 32,
                                   spreadRadius: 4,
@@ -127,6 +128,9 @@ class _SplashScreenState extends State<SplashScreen>
                               '🎮',
                               style: TextStyle(fontSize: 48),
                             ),
+                          ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(
+                            duration: 1200.ms,
+                            color: accentColor.withValues(alpha: 0.15),
                           ),
                           const SizedBox(height: 24),
                           Text(
@@ -139,13 +143,16 @@ class _SplashScreenState extends State<SplashScreen>
                               color: accentColor,
                               shadows: [
                                 Shadow(
-                                  color: accentColor.withOpacity(
-                                    0.3 * _glowPulse.value,
+                                  color: accentColor.withValues(
+                                    alpha: 0.3 * _glowPulse.value,
                                   ),
                                   blurRadius: 16,
                                 ),
                               ],
                             ),
+                          ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(
+                            duration: 1500.ms,
+                            color: accentColor.withValues(alpha: 0.12),
                           ),
                           const SizedBox(height: 8),
                           Text(
@@ -158,6 +165,9 @@ class _SplashScreenState extends State<SplashScreen>
                                   ? Colors.white54
                                   : Colors.black38,
                             ),
+                          ).animate().fadeIn(
+                            duration: 600.ms,
+                            delay: 800.ms,
                           ),
                         ],
                       ),
@@ -181,7 +191,7 @@ class _ScanlinePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = color.withOpacity(opacity)
+      ..color = color.withValues(alpha: opacity)
       ..strokeWidth = 1;
     for (double y = 0; y < size.height; y += 3) {
       canvas.drawLine(Offset(0, y), Offset(size.width, y), paint);

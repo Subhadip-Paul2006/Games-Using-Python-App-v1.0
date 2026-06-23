@@ -3,6 +3,7 @@ import '../../../core/constants/app_strings.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../data/mock/mock_data.dart';
 import '../../widgets/list/game_card.dart';
+import '../../widgets/display/display.dart';
 
 class AchievementsScreen extends StatelessWidget {
   const AchievementsScreen({super.key});
@@ -28,13 +29,13 @@ class AchievementsScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    AppColors.primary.withOpacity(0.08),
-                    AppColors.secondary.withOpacity(0.04),
+                    AppColors.primary.withValues(alpha: 0.08),
+                    AppColors.secondary.withValues(alpha: 0.04),
                   ],
                 ),
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
-                  color: AppColors.primary.withOpacity(0.2),
+                  color: AppColors.primary.withValues(alpha: 0.2),
                   width: 1,
                 ),
               ),
@@ -44,7 +45,7 @@ class AchievementsScreen extends StatelessWidget {
                     width: 56,
                     height: 56,
                     decoration: BoxDecoration(
-                      color: AppColors.primary.withOpacity(0.12),
+                      color: AppColors.primary.withValues(alpha: 0.12),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     alignment: Alignment.center,

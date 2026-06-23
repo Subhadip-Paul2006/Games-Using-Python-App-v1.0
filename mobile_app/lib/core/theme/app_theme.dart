@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'app_colors.dart';
 import 'app_typography.dart';
 
@@ -16,13 +17,13 @@ class AppTheme {
       useMaterial3: true,
       brightness: brightness,
       colorScheme: colorScheme,
-      scaffoldBackgroundColor: colorScheme.background,
+      scaffoldBackgroundColor: colorScheme.surface,
       textTheme: AppTypography.buildTextTheme(colorScheme),
       appBarTheme: AppBarTheme(
         elevation: 0,
         scrolledUnderElevation: 1,
         centerTitle: false,
-        backgroundColor: colorScheme.background,
+        backgroundColor: colorScheme.surface,
         foregroundColor: colorScheme.onSurface,
         titleTextStyle: TextStyle(
           fontFamily: AppTypography.fontLatin,
@@ -32,12 +33,12 @@ class AppTheme {
           color: colorScheme.onSurface,
         ),
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         elevation: isDark ? 0 : 1,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
           side: BorderSide(
-            color: colorScheme.outlineVariant.withOpacity(0.3),
+            color: colorScheme.outlineVariant.withValues(alpha: 0.3),
             width: 1,
           ),
         ),
@@ -84,7 +85,7 @@ class AppTheme {
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: colorScheme.surface,
         selectedItemColor: colorScheme.primary,
-        unselectedItemColor: colorScheme.onSurfaceVariant.withOpacity(0.6),
+        unselectedItemColor: colorScheme.onSurfaceVariant.withValues(alpha: 0.6),
         type: BottomNavigationBarType.fixed,
         elevation: 0,
         selectedLabelStyle: const TextStyle(
@@ -128,7 +129,7 @@ class AppTheme {
           color: colorScheme.surface,
         ),
       ),
-      dialogTheme: DialogTheme(
+      dialogTheme: DialogThemeData(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -142,7 +143,7 @@ class AppTheme {
         backgroundColor: colorScheme.surface,
         elevation: 3,
       ),
-      pageTransitionsTheme: const PageTransitionsTheme(
+      pageTransitionsTheme: PageTransitionsTheme(
         builders: {
           TargetPlatform.android: CupertinoPageTransitionsBuilder(),
           TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
@@ -168,11 +169,9 @@ class AppTheme {
     onError: AppColors.onError,
     errorContainer: AppColors.errorContainer,
     onErrorContainer: AppColors.onErrorContainer,
-    background: AppColors.background,
-    onBackground: AppColors.onBackground,
     surface: AppColors.surface,
     onSurface: AppColors.onSurface,
-    surfaceVariant: AppColors.surfaceVariant,
+    surfaceContainerHighest: AppColors.surfaceVariant,
     onSurfaceVariant: AppColors.onSurfaceVariant,
     outline: AppColors.outline,
     outlineVariant: AppColors.outlineVariant,
@@ -201,11 +200,9 @@ class AppTheme {
     onError: AppColors.onErrorDark,
     errorContainer: AppColors.errorContainerDark,
     onErrorContainer: AppColors.onErrorContainerDark,
-    background: AppColors.backgroundDark,
-    onBackground: AppColors.onBackgroundDark,
     surface: AppColors.surfaceDark,
     onSurface: AppColors.onSurfaceDark,
-    surfaceVariant: AppColors.surfaceVariantDark,
+    surfaceContainerHighest: AppColors.surfaceVariantDark,
     onSurfaceVariant: AppColors.onSurfaceVariantDark,
     outline: AppColors.outlineDark,
     outlineVariant: AppColors.outlineVariantDark,

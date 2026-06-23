@@ -1,3 +1,5 @@
+import 'package:flutter/animation.dart';
+
 class AppSpacing {
   AppSpacing._();
 
@@ -37,8 +39,6 @@ class AppSize {
   static const double bottomNav = 56.0;
   static const double bottomNavSafeArea = 56.0;
 }
-
-import 'package:flutter/animation.dart';
 
 class AppMotion {
   AppMotion._();

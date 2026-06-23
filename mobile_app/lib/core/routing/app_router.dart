@@ -8,6 +8,7 @@ import '../../presentation/screens/game_detail/game_detail_screen.dart';
 import '../../presentation/screens/profile/profile_screen.dart';
 import '../../presentation/screens/settings/settings_screen.dart';
 import '../../presentation/screens/achievements/achievements_screen.dart';
+import '../../presentation/widgets/navigation/navigation.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigatorKey = GlobalKey<NavigatorState>();
@@ -103,136 +104,6 @@ class AppShell extends StatelessWidget {
       bottomNavigationBar: RetroBottomNavBar(
         selectedIndex: currentIndex,
         onDestinationSelected: onNavChanged,
-      ),
-    );
-  }
-}
-
-class RetroBottomNavBar extends StatelessWidget {
-  final int selectedIndex;
-  final ValueChanged<int> onDestinationSelected;
-
-  const RetroBottomNavBar({
-    super.key,
-    required this.selectedIndex,
-    required this.onDestinationSelected,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-
-    return Container(
-      decoration: BoxDecoration(
-        color: scheme.surface,
-        border: Border(
-          top: BorderSide(
-            color: scheme.outlineVariant.withOpacity(0.3),
-            width: 1,
-          ),
-        ),
-      ),
-      child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _NavItem(
-                icon: Icons.home_outlined,
-                activeIcon: Icons.home,
-                label: 'Home',
-                isSelected: selectedIndex == 0,
-                color: scheme.primary,
-                inactiveColor: scheme.onSurfaceVariant.withOpacity(0.6),
-                onTap: () => onDestinationSelected(0),
-              ),
-              _NavItem(
-                icon: Icons.explore_outlined,
-                activeIcon: Icons.explore,
-                label: 'Discover',
-                isSelected: selectedIndex == 1,
-                color: scheme.primary,
-                inactiveColor: scheme.onSurfaceVariant.withOpacity(0.6),
-                onTap: () => onDestinationSelected(1),
-              ),
-              _NavItem(
-                icon: Icons.emoji_events_outlined,
-                activeIcon: Icons.emoji_events,
-                label: 'Achievements',
-                isSelected: selectedIndex == 2,
-                color: scheme.primary,
-                inactiveColor: scheme.onSurfaceVariant.withOpacity(0.6),
-                onTap: () => onDestinationSelected(2),
-              ),
-              _NavItem(
-                icon: Icons.person_outline,
-                activeIcon: Icons.person,
-                label: 'Profile',
-                isSelected: selectedIndex == 3,
-                color: scheme.primary,
-                inactiveColor: scheme.onSurfaceVariant.withOpacity(0.6),
-                onTap: () => onDestinationSelected(3),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _NavItem extends StatelessWidget {
-  final IconData icon;
-  final IconData activeIcon;
-  final String label;
-  final bool isSelected;
-  final Color color;
-  final Color inactiveColor;
-  final VoidCallback onTap;
-
-  const _NavItem({
-    required this.icon,
-    required this.activeIcon,
-    required this.label,
-    required this.isSelected,
-    required this.color,
-    required this.inactiveColor,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final activeColor = isSelected ? color : inactiveColor;
-    return GestureDetector(
-      onTap: onTap,
-      behavior: HitTestBehavior.opaque,
-      child: SizedBox(
-        width: 64,
-        height: 56,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            AnimatedSwitcher(
-              duration: const Duration(milliseconds: 200),
-              child: Icon(
-                isSelected ? activeIcon : icon,
-                key: ValueKey(isSelected),
-                size: 24,
-                color: activeColor,
-              ),
-            ),
-            const SizedBox(height: 4),
-            Text(
-              label,
-              style: TextStyle(
-                fontSize: 11,
-                fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
-                color: activeColor,
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }
