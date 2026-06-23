@@ -28,9 +28,10 @@
 10. [👥 Team & Roles](#-team--roles)
 11. [🗺️ Project Roadmap](#-project-roadmap)
 12. [📚 Companion Documentation](#-companion-documentation)
-13. [🤝 Contributing](#-contributing)
-14. [📜 License](#-license)
-15. [🙏 Acknowledgements](#-acknowledgements)
+13. [🛠️ Installing Flutter SDK (Step-by-Step)](#-installing-flutter-sdk-step-by-step)
+14. [🤝 Open Source Contributing](#-open-source-contributing)
+15. [📜 License](#-license)
+16. [🙏 Acknowledgements](#-acknowledgements)
 
 ---
 
@@ -596,6 +597,283 @@ flutter pub get
 flutterfire configure
 ```
 
+For detailed Flutter SDK installation walkthroughs, jump to **[🛠️ Installing Flutter SDK (Step-by-Step)](#-installing-flutter-sdk-step-by-step)** below.
+
+---
+
+## 🛠️ Installing Flutter SDK (Step-by-Step)
+
+> Choose **one** of the three platforms below. All three end with `flutter doctor` reporting a green check ✅.
+
+### 🪟 Step A — Windows Installation
+
+#### A1. System Requirements
+
+| Requirement | Minimum |
+|-------------|---------|
+| OS | Windows 10 (64-bit) or later |
+| Disk space | ~10 GB (Flutter SDK + Android SDK + emulator) |
+| RAM | 8 GB |
+| Git for Windows | https://git-scm.com/download/win |
+
+#### A2. Install Git for Windows
+
+Download the installer from https://git-scm.com/download/win and run it with the default options.
+
+#### A3. Download the Flutter SDK
+
+```powershell
+# Option 1 — Official ZIP (recommended for first install)
+# Download the latest stable Flutter SDK bundle from
+#   https://docs.flutter.dev/get-started/install/windows/mobile
+# Extract the zip to:  C:\src\flutter
+# (Do NOT install in C:\Program Files — it requires admin & causes permission issues)
+
+# Option 2 — Using git clone (lets you switch channels later)
+cd C:\src
+git clone https://github.com/flutter/flutter.git -b stable
+```
+
+#### A4. Add Flutter to PATH
+
+1. Press **Win + S** → type `env` → open **Edit the system environment variables**.
+2. Click **Environment Variables…** → under **User variables** select **Path** → **Edit…**.
+3. **New** → paste `C:\src\flutter\bin` → **OK** → **OK** → **OK**.
+4. **Close & reopen** any open terminals.
+
+#### A5. Verify the Install
+
+```powershell
+flutter --version
+flutter doctor
+```
+
+#### A6. Install Android Studio
+
+1. Download Android Studio from https://developer.android.com/studio.
+2. Run the installer → choose **Custom** setup → tick:
+   - ✅ Android SDK
+   - ✅ Android SDK Platform (API 35)
+   - ✅ Android Virtual Device
+   - ✅ Performance (Intel HAXM) — only on Intel CPUs
+3. Launch Android Studio → open **More Actions → SDK Manager**:
+   - Install **Android 14 (API 34)** + **Android 15 (API 35)**.
+   - Install **Android SDK Command-line Tools (latest)**.
+   - Under **SDK Tools**, tick **Google Play Services** and **Intel x86 Emulator Accelerator (HAXM)**.
+4. Accept all licences:
+   ```powershell
+   flutter doctor --android-licenses
+   ```
+   Press `y` until it exits.
+
+#### A7. Install JDK 17 (required by Gradle 8+)
+
+Download **Temurin 17 (LTS)** from https://adoptium.net and install with defaults.
+
+#### A8. Re-run `flutter doctor`
+
+```powershell
+flutter doctor
+```
+
+Expected output (all green ✅):
+```
+[√] Flutter (Channel stable, 3.x.x)
+[√] Android toolchain - develop for Android devices
+[√] Chrome - develop for the web
+[√] Android Studio
+[√] Connected device (1 available)
+[√] Network resources
+```
+
+#### A9. Configure Android Studio for Flutter
+
+1. Open Android Studio → **Plugins** → search **Flutter** → **Install** (this also installs the Dart plugin).
+2. Restart Android Studio.
+3. Verify **File → New → New Flutter Project** appears in the menu.
+
+---
+
+### 🍎 Step B — macOS Installation
+
+#### B1. System Requirements
+
+| Requirement | Minimum |
+|-------------|---------|
+| OS | macOS 12 (Monterey) or later, Intel or Apple Silicon |
+| Disk space | ~10 GB |
+| RAM | 8 GB |
+| Xcode (for iOS) | latest stable |
+| Homebrew (recommended) | https://brew.sh |
+
+#### B2. Install Rosetta 2 (Apple Silicon only)
+
+```bash
+softwareupdate --install-rosetta
+```
+
+#### B3. Install Xcode Command Line Tools
+
+```bash
+xcode-select --install
+```
+
+#### B4. Install via Homebrew (recommended)
+
+```bash
+# 1. Install Homebrew if you don't have it
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# 2. Install Flutter + dependencies
+brew install --cask flutter
+brew install --cask android-studio
+brew install openjdk@17
+```
+
+#### B5. Configure Environment Variables
+
+Add to your `~/.zshrc` (or `~/.bash_profile`):
+
+```bash
+# Flutter
+export PATH="$PATH:`brew --prefix flutter`/bin"
+# Android SDK (auto-installed by Android Studio)
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools"
+# JDK 17
+export JAVA_HOME="`brew --prefix openjdk@17`"
+```
+
+Reload:
+
+```bash
+source ~/.zshrc
+```
+
+#### B6. Install Android Studio Components
+
+1. Launch **Android Studio** → **More Actions → SDK Manager**.
+2. Install **Android 14 (API 34)** + **Android 15 (API 35)** + **Android SDK Command-line Tools**.
+3. Accept licences:
+   ```bash
+   flutter doctor --android-licenses
+   ```
+4. (Optional) Install iOS toolchain:
+   ```bash
+   sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+   sudo xcodebuild -runFirstLaunch
+   ```
+
+#### B7. Verify Everything
+
+```bash
+flutter doctor
+```
+
+You should see green checks for Flutter, Android toolchain, Xcode (if installed), and Chrome.
+
+---
+
+### 🐧 Step C — Linux Installation (Ubuntu / Debian)
+
+#### C1. System Requirements
+
+| Requirement | Minimum |
+|-------------|---------|
+| OS | Ubuntu 22.04+ / Debian 12+ (64-bit) |
+| Disk space | ~10 GB |
+| RAM | 8 GB |
+
+#### C2. Install System Dependencies
+
+```bash
+sudo apt update
+sudo apt install -y curl git unzip xz-utils zip libglu1-mesa \
+                    openjdk-17-jdk wget clang cmake ninja-build \
+                    pkg-config libgtk-3-dev liblzma-dev
+```
+
+#### C3. Download & Extract Flutter
+
+```bash
+cd ~
+wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.24.0-stable.tar.xz
+tar xf flutter_linux_3.24.0-stable.tar.xz
+```
+
+#### C4. Add Flutter to PATH
+
+Add to `~/.bashrc` (or `~/.zshrc`):
+
+```bash
+export PATH="$PATH:$HOME/flutter/bin"
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+```
+
+Reload:
+
+```bash
+source ~/.bashrc
+```
+
+#### C5. Install Android SDK Command-Line Tools
+
+```bash
+mkdir -p $ANDROID_HOME/cmdline-tools
+cd $ANDROID_HOME/cmdline-tools
+wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+unzip commandlinetools-linux-*.zip
+mv cmdline-tools latest
+```
+
+Accept licences and install required SDK packages:
+
+```bash
+yes | sdkmanager --licenses
+sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+```
+
+#### C6. Verify Everything
+
+```bash
+flutter doctor
+flutter doctor --android-licenses
+```
+
+You should now see green checks for Flutter and Android toolchain.
+
+---
+
+### ✅ Step D — Sanity-Check Across All Platforms
+
+Run these commands in any platform to confirm the toolchain works:
+
+```bash
+flutter doctor -v           # verbose report
+flutter create hello_world   # smoke-test the toolchain
+cd hello_world
+flutter run                 # launches on the first connected device
+```
+
+If the hello-world app launches, your Flutter installation is complete.
+
+### 📊 Flutter SDK Installation Flow
+
+```mermaid
+flowchart TB
+    A[🖥️ Pick your OS<br/>Windows / macOS / Linux] --> B[📦 Install Git + JDK 17]
+    B --> C[⬇️ Download Flutter SDK<br/>stable channel]
+    C --> D[🛣️ Add flutter/bin to PATH]
+    D --> E[🩺 flutter doctor]
+    E -->|❌ Issues?| F[🛠️ Fix dependencies<br/>Android SDK, licences, JDK]
+    F --> E
+    E -->|✅ All green| G[📱 Install Android Studio<br/>+ Flutter plugin]
+    G --> H[🚀 flutter create hello_world]
+    H --> I[🎉 Ready to clone the repo]
+```
+
 ---
 
 ## ▶️ Running the Project
@@ -717,27 +995,237 @@ This application sits on top of three detailed companion docs:
 
 ---
 
-## 🤝 Contributing
+## 🤝 Open Source Contributing
 
-We welcome contributions from anyone aligned with the project's principles. Please read the per-phase role tables in [`APP_DEVELOPMENT.md`](./APP_DEVELOPMENT.md) before opening an issue or PR.
+> 🌟 **Contributions are absolutely welcome!** Whether you're fixing a typo, porting a new Python game into Dart, designing a screen, or hunting down a crash — we'd love your help. Read on to learn how to fork the repo and open your first Pull Request.
 
-### Pull Request Process
+### 💖 Code of Conduct
 
-1. Branch from `develop`: `<type>/<short-kebab-description>` (e.g., `feature/snake-pause-overlay`)
-2. Conventional commits: `feat(snake): add pause overlay`
-3. PR must link an issue (`Closes #123`) and follow the PR template.
-4. ≥ 1 approval + all CI checks green → squash-merge.
-5. Branch auto-deleted on merge.
+By participating, you agree to:
 
-### Commit Convention
+- Be respectful and inclusive. We're building a **kid-safe** product — that energy carries into our community.
+- Assume good faith. Ask before assuming malice.
+- Keep PRs focused. One feature or fix per PR is easier to review.
+- Never commit secrets (`google-services.json`, Firebase keys, signing keys).
+
+### 🌱 Good First Issues
+
+New to the project? Look for issues tagged:
+
+| Label | Meaning |
+|-------|---------|
+| 🟢 `good first issue` | Beginner-friendly — clear scope, mentored review |
+| 🟡 `help wanted` | We need your expertise here |
+| 🔵 `documentation` | Docs, comments, README polish |
+| 🟣 `port-python-to-dart` | Port a Python game into Dart use-cases |
+| 🔴 `bug` | Confirmed defect waiting for a fix |
+
+### 🍴 Fork, Clone, Branch — the PR Workflow
+
+Here's the **complete step-by-step process** to get your first PR merged.
+
+#### 1️⃣ Fork the Repository
+
+1. Open https://github.com/Subhadip-Paul2006/Games-Using-Python-Application in your browser.
+2. Click the **Fork** button (top-right). This creates a copy under **your** GitHub account:
+   `https://github.com/<your-username>/Games-Using-Python-Application`.
+
+#### 2️⃣ Clone Your Fork Locally
+
+```bash
+# Replace <your-username> with your GitHub handle
+git clone https://github.com/<your-username>/Games-Using-Python-Application.git
+cd Games-Using-Python-Application
+
+# Add the upstream remote so you can sync later
+git remote add upstream https://github.com/Subhadip-Paul2006/Games-Using-Python-Application.git
+git remote -v   # should show both origin and upstream
+```
+
+#### 3️⃣ Sync with Upstream (do this every time you start a new PR)
+
+```bash
+git checkout develop
+git fetch upstream
+git merge upstream/develop
+git push origin develop
+```
+
+#### 4️⃣ Create a Feature Branch
+
+Always branch from `develop`. **Never** branch from `main`.
+
+```bash
+git checkout develop
+git checkout -b feature/snake-pause-overlay       # new feature
+git checkout -b fix/leaderboard-cap-100           # bug fix
+git checkout -b docs/update-readme-setup          # documentation
+git checkout -b port/port-hangman-to-dart         # Python → Dart port
+```
+
+Branch-naming convention:
 
 ```
-feat(snake): add 60 fps swipe input
-fix(leaderboard): cap query at 100 docs
-docs: update onboarding checklist
-chore: bump flutter to 3.24.0
-test(snake): add unit tests for collision logic
+<type>/<short-kebab-description>
+
+types: feature | fix | docs | refactor | test | port | chore
 ```
+
+#### 5️⃣ Make Your Changes
+
+```bash
+# 1. Install dependencies (first time only)
+flutter pub get
+
+# 2. Make your edits in lib/, test/, docs/, etc.
+
+# 3. Run the analyzer + tests locally before committing
+flutter analyze
+flutter test
+
+# 4. Format your code
+dart format lib/ test/
+```
+
+#### 6️⃣ Commit Using Conventional Commits
+
+```bash
+git add .
+git commit -m "feat(snake): add swipe-to-pause gesture overlay"
+```
+
+Conventional Commit types:
+
+| Type | When to use |
+|------|-------------|
+| `feat` | A new user-visible feature |
+| `fix` | A bug fix |
+| `docs` | Documentation-only changes |
+| `style` | Formatting / whitespace (no logic change) |
+| `refactor` | Code change that neither fixes a bug nor adds a feature |
+| `test` | Adding or fixing tests |
+| `chore` | Build / CI / tooling / dependency bumps |
+| `port` | Python → Dart logic port |
+
+Examples:
+
+```text
+feat(hangman): add Hindi word list with Devanagari support
+fix(leaderboard): cap query at 100 docs to avoid Firestore cost spike
+docs: add Flutter SDK install walkthrough for Windows
+port(sky_hop): port Sky Hop collision logic from Python to Dart
+test(snake): add unit tests for board wrap-around behaviour
+```
+
+#### 7️⃣ Push to Your Fork
+
+```bash
+git push origin feature/snake-pause-overlay
+```
+
+GitHub will print a link like:
+
+```
+remote: Create a PR: https://github.com/<your-username>/Games-Using-Python-Application/pull/new/feature/snake-pause-overlay
+```
+
+#### 8️⃣ Open the Pull Request
+
+1. Open that URL (or click **Compare & pull request** on your fork's GitHub page).
+2. Set the base branch to **`develop`** (not `main`).
+3. Fill out the PR template:
+
+   ```markdown
+   ## What does this PR do?
+   <!-- 1-3 sentences -->
+
+   ## Why is it needed?
+   <!-- link the issue: Closes #123 -->
+
+   ## How was it tested?
+   <!-- flutter test output, screenshots, manual steps -->
+
+   ## Checklist
+   - [ ] `flutter analyze` is clean
+   - [ ] `flutter test` is green
+   - [ ] Added/updated tests
+   - [ ] Followed Conventional Commits
+   - [ ] Updated docs (if behaviour changed)
+   ```
+
+4. Click **Create pull request**.
+
+#### 9️⃣ Respond to Review
+
+- A maintainer will review within **2 business days**.
+- Address feedback by pushing new commits to the same branch — the PR updates automatically.
+- Once approved, the maintainer will **squash-merge** into `develop`.
+- 🎉 Your branch auto-deletes on merge; you'll be listed in the contributors graph.
+
+### 🔁 Visual: The Pull Request Lifecycle
+
+```mermaid
+flowchart LR
+    A[🐛 Issue / 💡 Idea] --> B[🍴 Fork Repo]
+    B --> C[📥 Clone Locally]
+    C --> D[🌿 Branch from develop]
+    D --> E[🛠️ Make Changes]
+    E --> F[🧪 flutter analyze + test]
+    F -->|❌ fails| E
+    F -->|✅ passes| G[📝 Conventional Commit]
+    G --> H[📤 Push to fork]
+    H --> I[🔗 Open PR → develop]
+    I --> J[🔍 Code Review]
+    J -->|changes requested| E
+    J -->|approved| K[✅ Squash-merge]
+    K --> L[🚀 CI/CD pipeline]
+    L --> M[🎉 Contributor!]
+```
+
+### 🧪 Local Quality Gate (must pass before opening a PR)
+
+```bash
+flutter pub get
+flutter analyze                                # 0 warnings
+flutter test                                   # all green
+flutter test --coverage                        # coverage diff visible
+dart format --set-exit-if-changed lib/ test/   # no diff
+```
+
+Optional but encouraged:
+
+```bash
+flutter test integration_test/                 # smoke test happy path
+firebase emulators:exec --only firestore \
+  "flutter test integration_test/"             # with local Firebase
+```
+
+### 🧭 Where to Contribute
+
+| Area | Where in the repo | Difficulty |
+|------|-------------------|------------|
+| 🐍 Port a Python game to Dart | `lib/domain/games/<game>/` + `test/domain/games/<game>/` | 🟡 Intermediate |
+| 🎨 Implement a new screen from Figma | `lib/presentation/<screen>/` | 🟢 Beginner |
+| 🐞 Fix a bug | Search `good first issue` / `bug` labels | 🟢 Beginner |
+| 🌐 Translation (Hindi / Bengali) | `lib/l10n/app_hi.arb`, `app_bn.arb` | 🟢 Beginner |
+| 📊 Add analytics events | `lib/core/analytics/` | 🟡 Intermediate |
+| ⚡ Write a Cloud Function | `functions/src/<feature>.ts` | 🔴 Advanced |
+| 🧪 Add tests | `test/` | 🟢 Beginner |
+| 📚 Improve docs | `*.md` files | 🟢 Beginner |
+
+### 🙋 Getting Help
+
+Stuck? Reach out!
+
+- 💬 Open a **Discussion** on GitHub: https://github.com/Subhadip-Paul2006/Games-Using-Python-Application/discussions
+- 🐞 File an **Issue**: https://github.com/Subhadip-Paul2006/Games-Using-Python-Application/issues
+- 📧 Email the maintainers: see [`CODEOWNERS`](./CODEOWNERS) (coming soon)
+
+### ⭐ Show Your Support
+
+If you find this project useful, please **star ⭐ the repo** — it helps more people discover it.
+
+Thank you for contributing! 💙
 
 ---
 
