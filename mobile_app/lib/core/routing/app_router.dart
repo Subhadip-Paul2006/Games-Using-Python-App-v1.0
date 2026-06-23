@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../screens/splash/splash_screen.dart';
-import '../screens/onboarding/onboarding_screen.dart';
-import '../screens/home/home_screen.dart';
-import '../screens/discover/discover_screen.dart';
-import '../screens/game_detail/game_detail_screen.dart';
-import '../screens/profile/profile_screen.dart';
-import '../screens/settings/settings_screen.dart';
-import '../screens/achievements/achievements_screen.dart';
+import '../../presentation/screens/splash/splash_screen.dart';
+import '../../presentation/screens/onboarding/onboarding_screen.dart';
+import '../../presentation/screens/home/home_screen.dart';
+import '../../presentation/screens/discover/discover_screen.dart';
+import '../../presentation/screens/game_detail/game_detail_screen.dart';
+import '../../presentation/screens/profile/profile_screen.dart';
+import '../../presentation/screens/settings/settings_screen.dart';
+import '../../presentation/screens/achievements/achievements_screen.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigatorKey = GlobalKey<NavigatorState>();

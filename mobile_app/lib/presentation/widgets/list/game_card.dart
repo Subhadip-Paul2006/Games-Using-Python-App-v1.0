@@ -20,7 +20,7 @@ class GameCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
         side: BorderSide(
-          color: gameColor.withOpacity(0.3),
+          color: gameColor.withValues(alpha: 0.3),
           width: 1,
         ),
       ),
@@ -38,10 +38,10 @@ class GameCard extends StatelessWidget {
                 width: 56,
                 height: 56,
                 decoration: BoxDecoration(
-                  color: gameColor.withOpacity(0.12),
+                  color: gameColor.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
-                    color: gameColor.withOpacity(0.3),
+                    color: gameColor.withValues(alpha: 0.3),
                     width: 1,
                   ),
                 ),
@@ -126,8 +126,8 @@ class GameCardFeatured extends StatelessWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                gameColor.withOpacity(0.2),
-                gameColor.withOpacity(0.05),
+                gameColor.withValues(alpha: 0.2),
+                gameColor.withValues(alpha: 0.05),
               ],
             ),
           ),
@@ -140,10 +140,10 @@ class GameCardFeatured extends StatelessWidget {
                 width: 64,
                 height: 64,
                 decoration: BoxDecoration(
-                  color: gameColor.withOpacity(0.15),
+                  color: gameColor.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: gameColor.withOpacity(0.4),
+                    color: gameColor.withValues(alpha: 0.4),
                     width: 1.5,
                   ),
                 ),
@@ -217,7 +217,7 @@ class LeaderboardRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final bgColor = isMe ? scheme.primaryContainer.withOpacity(0.3) : null;
+    final bgColor = isMe ? scheme.primaryContainer.withValues(alpha: 0.3) : null;
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -225,7 +225,7 @@ class LeaderboardRow extends StatelessWidget {
         color: bgColor,
         borderRadius: BorderRadius.circular(12),
         border: isMe
-            ? Border.all(color: scheme.primary.withOpacity(0.3), width: 1)
+            ? Border.all(color: scheme.primary.withValues(alpha: 0.3), width: 1)
             : null,
       ),
       child: Row(
@@ -303,7 +303,7 @@ class AchievementBadge extends StatelessWidget {
                 width: 48,
                 height: 48,
                 decoration: BoxDecoration(
-                  color: color.withOpacity(0.12),
+                  color: color.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(12),
                   border: isUnlocked
                       ? Border.all(color: color, width: 1.5)

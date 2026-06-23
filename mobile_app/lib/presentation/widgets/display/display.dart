@@ -26,7 +26,7 @@ class RetroAvatar extends StatelessWidget {
       decoration: BoxDecoration(
         color: bg,
         shape: BoxShape.circle,
-        border: Border.all(color: border.withOpacity(0.3), width: 1.5),
+        border: Border.all(color: border.withValues(alpha: 0.3), width: 1.5),
       ),
       alignment: Alignment.center,
       child: Text(
@@ -92,7 +92,7 @@ class RetroProgressBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final active = activeColor ?? scheme.primary;
-    final track = trackColor ?? scheme.surfaceVariant;
+    final track = trackColor ?? scheme.surfaceContainerHighest;
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(999),
@@ -142,7 +142,7 @@ class RetroFilterChip extends StatelessWidget {
         duration: const Duration(milliseconds: 200),
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         decoration: BoxDecoration(
-          color: selected ? active.withOpacity(0.12) : scheme.surface,
+          color: selected ? active.withValues(alpha: 0.12) : scheme.surface,
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
             color: selected ? active : scheme.outlineVariant,

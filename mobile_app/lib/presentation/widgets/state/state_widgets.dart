@@ -30,7 +30,7 @@ class EmptyStateWidget extends StatelessWidget {
               width: 80,
               height: 80,
               decoration: BoxDecoration(
-                color: scheme.primaryContainer.withOpacity(0.3),
+                color: scheme.primaryContainer.withValues(alpha: 0.3),
                 shape: BoxShape.circle,
               ),
               alignment: Alignment.center,
@@ -100,7 +100,7 @@ class ErrorStateWidget extends StatelessWidget {
               width: 80,
               height: 80,
               decoration: BoxDecoration(
-                color: scheme.errorContainer.withOpacity(0.3),
+                color: scheme.errorContainer.withValues(alpha: 0.3),
                 shape: BoxShape.circle,
               ),
               alignment: Alignment.center,
@@ -158,7 +158,7 @@ class LoadingShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final baseColor = scheme.surfaceVariant.withOpacity(0.3);
+    final baseColor = scheme.surfaceContainerHighest.withValues(alpha: 0.3);
     final highlightColor = scheme.surface;
 
     return Shimmer.fromColors(
@@ -177,7 +177,7 @@ class LoadingShimmer extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: itemCount,
       padding: const EdgeInsets.all(16),
-      itemBuilder: (_, __) => Padding(
+      itemBuilder: (_, _) => Padding(
         padding: const EdgeInsets.only(bottom: 12),
         child: _ShimmerCard(),
       ),
@@ -189,7 +189,7 @@ class LoadingShimmer extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: itemCount,
       padding: const EdgeInsets.all(16),
-      itemBuilder: (_, __) => Padding(
+      itemBuilder: (_, _) => Padding(
         padding: const EdgeInsets.only(bottom: 8),
         child: _ShimmerListTile(),
       ),
@@ -207,7 +207,7 @@ class LoadingShimmer extends StatelessWidget {
         crossAxisSpacing: 12,
         childAspectRatio: 0.85,
       ),
-      itemBuilder: (_, __) => const _ShimmerGridItem(),
+      itemBuilder: (_, _) => const _ShimmerGridItem(),
     );
   }
 }

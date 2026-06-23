@@ -38,6 +38,8 @@ class AppSize {
   static const double bottomNavSafeArea = 56.0;
 }
 
+import 'package:flutter/animation.dart';
+
 class AppMotion {
   AppMotion._();
 
@@ -47,10 +49,10 @@ class AppMotion {
   static const Duration slow = Duration(milliseconds: 500);
   static const Duration emphasis = Duration(milliseconds: 700);
 
-  static const Curve easeOut = Curves.easeOut;
-  static const Curve easeInOut = Curves.easeInOut;
-  static const Curve bounceOut = Curves.bounceOut;
-  static const Curve elasticOut = Curves.elasticOut;
+  static final Curve easeOut = Curves.easeOut;
+  static final Curve easeInOut = Curves.easeInOut;
+  static final Curve bounceOut = Curves.bounceOut;
+  static final Curve elasticOut = Curves.elasticOut;
 }
 
 class AppElevation {

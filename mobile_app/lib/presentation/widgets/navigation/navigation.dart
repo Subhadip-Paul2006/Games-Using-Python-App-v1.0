@@ -19,7 +19,7 @@ class RetroBottomNavBar extends StatelessWidget {
         color: scheme.surface,
         border: Border(
           top: BorderSide(
-            color: scheme.outlineVariant.withOpacity(0.3),
+            color: scheme.outlineVariant.withValues(alpha: 0.3),
             width: 1,
           ),
         ),
@@ -84,7 +84,7 @@ class _NavItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final color = isSelected ? scheme.primary : scheme.onSurfaceVariant.withOpacity(0.6);
+    final color = isSelected ? scheme.primary : scheme.onSurfaceVariant.withValues(alpha: 0.6);
 
     return GestureDetector(
       onTap: onTap,
@@ -190,3 +190,4 @@ class PixelatedAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(56);
 }
+

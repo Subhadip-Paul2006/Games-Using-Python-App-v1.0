@@ -32,39 +32,39 @@ class TouchDPad extends StatelessWidget {
             top: 0,
             child: _DPadButton(
               onPressed: onUp,
-              child: Icon(Icons.arrow_upward, size: iconSize),
               size: btnSize,
+              child: Icon(Icons.arrow_upward, size: iconSize),
             ),
           ),
           Positioned(
             bottom: 0,
             child: _DPadButton(
               onPressed: onDown,
-              child: Icon(Icons.arrow_downward, size: iconSize),
               size: btnSize,
+              child: Icon(Icons.arrow_downward, size: iconSize),
             ),
           ),
           Positioned(
             left: 0,
             child: _DPadButton(
               onPressed: onLeft,
-              child: Icon(Icons.arrow_back, size: iconSize),
               size: btnSize,
+              child: Icon(Icons.arrow_back, size: iconSize),
             ),
           ),
           Positioned(
             right: 0,
             child: _DPadButton(
               onPressed: onRight,
-              child: Icon(Icons.arrow_forward, size: iconSize),
               size: btnSize,
+              child: Icon(Icons.arrow_forward, size: iconSize),
             ),
           ),
           Container(
             width: btnSize * 0.6,
             height: btnSize * 0.6,
             decoration: BoxDecoration(
-              color: scheme.surfaceVariant.withOpacity(0.5),
+              color: scheme.surfaceContainerHighest.withValues(alpha: 0.5),
               shape: BoxShape.circle,
             ),
           ),
@@ -94,10 +94,10 @@ class _DPadButton extends StatelessWidget {
         width: size,
         height: size,
         decoration: BoxDecoration(
-          color: scheme.surfaceVariant.withOpacity(0.7),
+          color: scheme.surfaceContainerHighest.withValues(alpha: 0.7),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: scheme.outline.withOpacity(0.2),
+            color: scheme.outline.withValues(alpha: 0.2),
             width: 1,
           ),
         ),

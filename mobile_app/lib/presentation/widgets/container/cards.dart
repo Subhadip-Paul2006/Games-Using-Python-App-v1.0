@@ -27,7 +27,7 @@ class RetroCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(borderRadius),
         side: BorderSide(
-          color: scheme.outlineVariant.withOpacity(0.3),
+          color: scheme.outlineVariant.withValues(alpha: 0.3),
           width: 1,
         ),
       ),
@@ -253,7 +253,7 @@ class RetroSnackbar {
                     description,
                     style: TextStyle(
                       fontSize: 12,
-                      color: scheme.onSecondaryContainer.withOpacity(0.8),
+                      color: scheme.onSecondaryContainer.withValues(alpha: 0.8),
                     ),
                   ),
                 ],
