@@ -6,7 +6,7 @@
 **Audience:** Abhishek (Frontend), Subhadip (Backend), future designers, accessibility consultants
 **Companion docs:** `PRD.md` (product requirements), `TRD.md` (technical requirements)
 
-> **How to read this document.** Section 1–6 explain *why*. Section 7 (Components) and Sections 12–21 (Screens) are the bulk of the implementation reference — Abhishek should be able to build any screen by reading its section plus the Component section. Sections 8–11 are the cross-cutting rules that apply everywhere. Sections 22–25 cover motion, microinteractions, and the roadmap.
+> **How to read this document.** Section 1–6 explain _why_. Section 7 (Components) and Sections 12–21 (Screens) are the bulk of the implementation reference — Abhishek should be able to build any screen by reading its section plus the Component section. Sections 8–11 are the cross-cutting rules that apply everywhere. Sections 22–25 cover motion, microinteractions, and the roadmap.
 
 ---
 
@@ -50,11 +50,11 @@
 
 Per `PRD.md §3` (Unique Value Proposition): **One app. Six games. Zero friction.** Our design must visibly deliver on all three:
 
-| UVP claim | Design promise | Where you see it |
-|---|---|---|
-| One app | A unified shell with consistent IA across all 6 games | Section 8 (Navigation), Section 14 (Home) |
-| Six games | Each game gets equal, distinct visual treatment | Section 5 (per-game colour accents), Section 15 (Game Detail) |
-| Zero friction | Tap-to-play in ≤3 taps from cold launch | Section 12 (Onboarding), Section 14 (Home) |
+| UVP claim     | Design promise                                        | Where you see it                                              |
+| ------------- | ----------------------------------------------------- | ------------------------------------------------------------- |
+| One app       | A unified shell with consistent IA across all 6 games | Section 8 (Navigation), Section 14 (Home)                     |
+| Six games     | Each game gets equal, distinct visual treatment       | Section 5 (per-game colour accents), Section 15 (Game Detail) |
+| Zero friction | Tap-to-play in ≤3 taps from cold launch               | Section 12 (Onboarding), Section 14 (Home)                    |
 
 ### 1.3 Six working principles
 
@@ -90,7 +90,7 @@ mindmap
 
 #### Principle 1 — Calm by default
 
-Arcade games are loud. Our chrome is quiet. We use generous whitespace, low-saturation surfaces, and a maximum of one accent colour per screen. Game surfaces can be vivid; the *frame around the game* is always restrained. **Why:** per persona Priya (adult commuter) and Mr. Banerjee (parent), the app must feel like a refuge, not a casino.
+Arcade games are loud. Our chrome is quiet. We use generous whitespace, low-saturation surfaces, and a maximum of one accent colour per screen. Game surfaces can be vivid; the _frame around the game_ is always restrained. **Why:** per persona Priya (adult commuter) and Mr. Banerjee (parent), the app must feel like a refuge, not a casino.
 
 #### Principle 2 — Big, brave, forgiving
 
@@ -98,7 +98,7 @@ Indian Android users skew toward smaller phones (per persona §6, 360×640 dp is
 
 #### Principle 3 — Offline is the default state
 
-Per `TRD.md §4`, the app is offline-first. The UI must *visibly* communicate offline-ness without being alarming: subtle non-red badges (`Offline · will sync`), cached avatars, optimistic UI on every action. **Why:** Indian cellular data is patchy; the app must never feel "broken" just because the network is.
+Per `TRD.md §4`, the app is offline-first. The UI must _visibly_ communicate offline-ness without being alarming: subtle non-red badges (`Offline · will sync`), cached avatars, optimistic UI on every action. **Why:** Indian cellular data is patchy; the app must never feel "broken" just because the network is.
 
 #### Principle 4 — Child-safe, parent-trustworthy
 
@@ -120,7 +120,7 @@ English default, plus Hindi + Bengali (per `PRD.md §3`). All copy is authored i
 
 **Games Platform** (working title for v1.0).
 
-> **Why this is a placeholder.** Per `PRD.md §4.2`, the team is still validating whether *Games Platform* survives contact with the Play Store. The name "Games Platform" is descriptive but bland. Candidates for a rename include **Arcade Bharat**, **GameKhana** (Hindi: "play house"), **PixelBaadi** (Bengali: "sibling of play"). A rename triggers a token rename (Section 6) but does not change anything else in this spec.
+> **Why this is a placeholder.** Per `PRD.md §4.2`, the team is still validating whether _Games Platform_ survives contact with the Play Store. The name "Games Platform" is descriptive but bland. Candidates for a rename include **Arcade Bharat**, **GameKhana** (Hindi: "play house"), **PixelBaadi** (Bengali: "sibling of play"). A rename triggers a token rename (Section 6) but does not change anything else in this spec.
 
 ### 2.2 Logo concept
 
@@ -160,23 +160,23 @@ Minimum size: 24×24 dp (app icon will scale to 192 px)
 
 ### 2.3 Tagline
 
-> **English:** *"Six games. One home. Zero ads to start."*
-> **Hindi:** *"छह खेल। एक घर। शुरू में कोई ऐड नहीं।"* (chhah khel. ek ghar. shuru mein koi ad nahi.)
-> **Bengali:** *"ছটি গেম। একটি ঘর। শুরুতে কোনো বিজ্ঞাপন নেই।"* (chhoti gem. ekti ghor. shurutte kono bishleshon nei.)
+> **English:** _"Six games. One home. Zero ads to start."_
+> **Hindi:** _"छह खेल। एक घर। शुरू में कोई ऐड नहीं।"_ (chhah khel. ek ghar. shuru mein koi ad nahi.)
+> **Bengali:** _"ছটি গেম। একটি ঘর। শুরুতে কোনো বিজ্ঞাপন নেই।"_ (chhoti gem. ekti ghor. shurutte kono bishleshon nei.)
 
 > **Why this tagline.** It mirrors the UVP ("One app. Six games. Zero friction.") but swaps "zero friction" for the more concrete "zero ads to start" — which speaks to the reward-ad model and the Remove-Ads IAP (per `PRD.md §5.4`).
 
 ### 2.4 Tone of voice
 
-| Trait | Description | Example |
-|---|---|---|
-| Friendly | Second person, contractions welcome | "You scored 1,240!" |
-| Concise | One sentence per micro-copy line; never two | "Sync paused. We'll catch up." |
-| Encouraging | Celebrate progress, never shame failure | "Tough one. Want another go?" |
-| Safe | No sarcasm with children; no jokes about loss | — |
-| Local | Idioms that land in EN/HI/BN | "Chakka" (clean sweep in RPS), "Shabaash" (well done) |
+| Trait       | Description                                   | Example                                               |
+| ----------- | --------------------------------------------- | ----------------------------------------------------- |
+| Friendly    | Second person, contractions welcome           | "You scored 1,240!"                                   |
+| Concise     | One sentence per micro-copy line; never two   | "Sync paused. We'll catch up."                        |
+| Encouraging | Celebrate progress, never shame failure       | "Tough one. Want another go?"                         |
+| Safe        | No sarcasm with children; no jokes about loss | —                                                     |
+| Local       | Idioms that land in EN/HI/BN                  | "Chakka" (clean sweep in RPS), "Shabaash" (well done) |
 
-**Forbidden words:** *free* (legally fraught in India), *easy* (dismissive of effort), *just* (minimises user effort), *win* (in error messages — implies the user lost).
+**Forbidden words:** _free_ (legally fraught in India), _easy_ (dismissive of effort), _just_ (minimises user effort), _win_ (in error messages — implies the user lost).
 
 ### 2.5 Mascot candidate
 
@@ -205,7 +205,7 @@ mindmap
       Splash intro
 ```
 
-**Working name: "Pi"** — a friendly geometric fox made entirely of M3 colour blocks (round head, triangular ears, 4-segment tail). Pi is an *opt-in* presence — appears in onboarding, empty states, and the "Achievement unlocked" toast; never inside a game.
+**Working name: "Pi"** — a friendly geometric fox made entirely of M3 colour blocks (round head, triangular ears, 4-segment tail). Pi is an _opt-in_ presence — appears in onboarding, empty states, and the "Achievement unlocked" toast; never inside a game.
 
 > **Why a mascot.** Per `PRD.md §6` persona Riya (9) responds strongly to character; persona Aarav (16) does not. By making Pi opt-in and confined to chrome, we get the warmth for kids without alienating teens. If Mascot is rejected by user testing, fall back to a plain geometric illustration style.
 
@@ -223,21 +223,22 @@ mindmap
 
 ### 3.1 Shape language
 
-**Soft geometry, hard logic.** Outer forms (cards, buttons, avatars) are soft-cornered (12–24 dp radius). Inner elements that communicate state (active toggle, selected chip, current player in Tic Tac Toe) use square corners or sharp diagonal cuts. This creates a subtle visual hierarchy: *container = friendly, content = precise*.
+**Soft geometry, hard logic.** Outer forms (cards, buttons, avatars) are soft-cornered (12–24 dp radius). Inner elements that communicate state (active toggle, selected chip, current player in Tic Tac Toe) use square corners or sharp diagonal cuts. This creates a subtle visual hierarchy: _container = friendly, content = precise_.
 
-| Element | Corner radius | Why |
-|---|---|---|
-| App icon | 24 dp (24% of 96 px) | Material adaptive icon standard |
-| Bottom nav background | 28 dp top corners only | "Floating dock" feel |
-| Cards (game tiles, profile) | 16 dp | Big enough to feel soft, small enough not to waste canvas |
-| Buttons | 12 dp (small), 20 dp (filled) | Filled buttons need extra radius to feel pressable |
-| Chips | 8 dp (full-pill on filter chips) | Industry standard |
-| In-game tiles (Block Drop, MineSneeker cells) | 0 dp | Sharp = readable |
-| Score badge | 999 dp (full pill) | Always pill, never square |
+| Element                                       | Corner radius                    | Why                                                       |
+| --------------------------------------------- | -------------------------------- | --------------------------------------------------------- |
+| App icon                                      | 24 dp (24% of 96 px)             | Material adaptive icon standard                           |
+| Bottom nav background                         | 28 dp top corners only           | "Floating dock" feel                                      |
+| Cards (game tiles, profile)                   | 16 dp                            | Big enough to feel soft, small enough not to waste canvas |
+| Buttons                                       | 12 dp (small), 20 dp (filled)    | Filled buttons need extra radius to feel pressable        |
+| Chips                                         | 8 dp (full-pill on filter chips) | Industry standard                                         |
+| In-game tiles (Block Drop, MineSneeker cells) | 0 dp                             | Sharp = readable                                          |
+| Score badge                                   | 999 dp (full pill)               | Always pill, never square                                 |
 
 ### 3.2 Illustration style
 
 **Geometric flat with 2-stop gradients.** All custom illustrations (empty states, onboarding) use:
+
 - 3–5 flat colour fills per illustration (no more — colour-noise is exhausting)
 - A single 2-stop linear gradient on the largest shape for depth (e.g., 135°, primary 100% → primaryContainer 100%)
 - A consistent 4 dp stroke for any outlined element
@@ -245,6 +246,7 @@ mindmap
 - No human figures inside the app — Pi the fox is the only character
 
 **Reference moodboard (internal):**
+
 - Stripe illustrations (geometric, generous whitespace)
 - Linear's marketing illustrations (muted gradients, sharp typography)
 - Duolingo's "calm" illustrations post-2022 redesign (less cartoon, more iconographic)
@@ -272,12 +274,12 @@ The one exception: **user-uploaded avatars are disabled in v1.0** (per `PRD.md �
 
 ### 4.1 Font choices
 
-| Language | Primary font | Fallback chain | Source |
-|---|---|---|---|
-| Latin (English) | **Outfit** (variable) | Outfit → Inter → Roboto → system sans | Google Fonts |
-| Devanagari (Hindi) | **Noto Sans Devanagari** | Noto Sans Devanagari → system Devanagari | Google Fonts |
-| Bengali | **Noto Sans Bengali** | Noto Sans Bengali → system Bengali | Google Fonts |
-| Monospace (scores only) | **JetBrains Mono** | JetBrains Mono → Roboto Mono → monospace | Google Fonts |
+| Language                | Primary font             | Fallback chain                           | Source       |
+| ----------------------- | ------------------------ | ---------------------------------------- | ------------ |
+| Latin (English)         | **Outfit** (variable)    | Outfit → Inter → Roboto → system sans    | Google Fonts |
+| Devanagari (Hindi)      | **Noto Sans Devanagari** | Noto Sans Devanagari → system Devanagari | Google Fonts |
+| Bengali                 | **Noto Sans Bengali**    | Noto Sans Bengali → system Bengali       | Google Fonts |
+| Monospace (scores only) | **JetBrains Mono**       | JetBrains Mono → Roboto Mono → monospace | Google Fonts |
 
 > **Why Outfit for English, not Inter.** Outfit has slightly rounder counters and a higher x-height, which improves readability on AMOLED screens in bright Indian sunlight. Inter is excellent but has a colder feel; Outfit leans friendly without being childish. We benchmarked both at 14 sp on a 5″ 720p screen — Outfit was rated 12% more legible in our internal test (n=8).
 
@@ -306,25 +308,25 @@ xychart-beta
     bar [57, 32, 22, 16, 14]
 ```
 
-Based on Material 3's *typescale generator* with a base of 16 sp. All values in `sp` (respects user's `textScaler`).
+Based on Material 3's _typescale generator_ with a base of 16 sp. All values in `sp` (respects user's `textScaler`).
 
-| Token | Size | Line-height | Weight | Letter-spacing | Use case |
-|---|---|---|---|---|---|
-| `display.large` | 57 | 64 | 400 | -0.25 | Splash tagline only |
-| `display.medium` | 45 | 52 | 400 | 0 | Onboarding hero |
-| `display.small` | 36 | 44 | 400 | 0 | Empty-state hero |
-| `headline.large` | 32 | 40 | 600 | 0 | Screen titles |
-| `headline.medium` | 28 | 36 | 600 | 0 | Card section headers |
-| `headline.small` | 24 | 32 | 600 | 0 | Game Detail title |
-| `title.large` | 22 | 28 | 600 | 0 | App bar title |
-| `title.medium` | 16 | 24 | 600 | 0.15 | List item primary |
-| `title.small` | 14 | 20 | 600 | 0.1 | Button labels, chip labels |
-| `body.large` | 16 | 24 | 400 | 0.5 | Default body |
-| `body.medium` | 14 | 20 | 400 | 0.25 | Default body, dense UI |
-| `body.small` | 12 | 16 | 400 | 0.4 | Caption, helper text |
-| `label.large` | 14 | 20 | 600 | 0.1 | Primary buttons |
-| `label.medium` | 12 | 16 | 600 | 0.5 | Secondary buttons, tabs |
-| `label.small` | 11 | 16 | 600 | 0.5 | Overlines, badges |
+| Token             | Size | Line-height | Weight | Letter-spacing | Use case                   |
+| ----------------- | ---- | ----------- | ------ | -------------- | -------------------------- |
+| `display.large`   | 57   | 64          | 400    | -0.25          | Splash tagline only        |
+| `display.medium`  | 45   | 52          | 400    | 0              | Onboarding hero            |
+| `display.small`   | 36   | 44          | 400    | 0              | Empty-state hero           |
+| `headline.large`  | 32   | 40          | 600    | 0              | Screen titles              |
+| `headline.medium` | 28   | 36          | 600    | 0              | Card section headers       |
+| `headline.small`  | 24   | 32          | 600    | 0              | Game Detail title          |
+| `title.large`     | 22   | 28          | 600    | 0              | App bar title              |
+| `title.medium`    | 16   | 24          | 600    | 0.15           | List item primary          |
+| `title.small`     | 14   | 20          | 600    | 0.1            | Button labels, chip labels |
+| `body.large`      | 16   | 24          | 400    | 0.5            | Default body               |
+| `body.medium`     | 14   | 20          | 400    | 0.25           | Default body, dense UI     |
+| `body.small`      | 12   | 16          | 400    | 0.4            | Caption, helper text       |
+| `label.large`     | 14   | 20          | 600    | 0.1            | Primary buttons            |
+| `label.medium`    | 12   | 16          | 600    | 0.5            | Secondary buttons, tabs    |
+| `label.small`     | 11   | 16          | 600    | 0.5            | Overlines, badges          |
 
 ### 4.4 Devanagari + Bengali rules
 
@@ -345,14 +347,17 @@ flowchart LR
 ```
 
 **Line-height bumps:**
+
 - All Devanagari text: multiply line-height by **1.55** (vs 1.5 for Latin) to give matras room to breathe above the headline.
 - All Bengali text: multiply line-height by **1.55** to handle the চন্দ্রবিন্দু (chandrabindu) and post-mark characters.
 
 **Conjunct handling:**
+
 - Never truncate Devanagari or Bengali text mid-word. `Text` widgets must use `softWrap: true` and `overflow: TextOverflow.visible` for any sentence ≥ 3 words. For titles, `maxLines: 2` with `overflow: TextOverflow.ellipsis` is acceptable.
 - Avoid tight letter-spacing on Indic scripts — Noto's metrics already include script-appropriate spacing; manual `letterSpacing` will break conjuncts.
 
 **Conjunct-prone strings to watch:**
+
 - "क्रीड़ा" (krida — game) — the ड़ conjunct can render below the baseline on weak fonts
 - "যুক্ত" (yukto — joint) — the ক্ষ conjunct is the most failure-prone in Bengali
 
@@ -370,13 +375,13 @@ Tabular figures (`fontFeatures: [FontFeature.tabularFigures()]`) is enabled by d
 
 ### 4.6 `textScaler` policy
 
-| Surface | Policy | Implementation |
-|---|---|---|
-| Body, titles, buttons, settings | Respect user `textScaler` | Default `Text` widget |
-| In-game HUD (score, timer) | Cap at 1.2× | `MediaQuery.withClampedTextScaling(maxScaleFactor: 1.2)` on the HUD subtree |
-| In-game canvas (Snake, Block Drop) | Cap at 1.0× | `MediaQuery.withClampedTextScaling(maxScaleFactor: 1.0)` on the canvas subtree |
-| Onboarding hero | Respect | Default |
-| App bar | Respect | Default |
+| Surface                            | Policy                    | Implementation                                                                 |
+| ---------------------------------- | ------------------------- | ------------------------------------------------------------------------------ |
+| Body, titles, buttons, settings    | Respect user `textScaler` | Default `Text` widget                                                          |
+| In-game HUD (score, timer)         | Cap at 1.2×               | `MediaQuery.withClampedTextScaling(maxScaleFactor: 1.2)` on the HUD subtree    |
+| In-game canvas (Snake, Block Drop) | Cap at 1.0×               | `MediaQuery.withClampedTextScaling(maxScaleFactor: 1.0)` on the canvas subtree |
+| Onboarding hero                    | Respect                   | Default                                                                        |
+| App bar                            | Respect                   | Default                                                                        |
 
 > **Why cap HUD/canvas.** Per persona Aarav (16, competitive), a HUD that scales to 1.5× will overflow on a 360 dp screen. We're not ignoring accessibility — we're applying it where it matters (the chrome) and protecting the game surfaces where scaling destroys gameplay. This is a documented exception per `WCAG 2.2 §1.4.4 Resize text`.
 
@@ -444,6 +449,7 @@ pie title Color Token Categories
 **Primary — "Cosmic Indigo" `#5B57D9`**
 
 > **Why indigo.** Per `PRD.md §3`, India-first with a broad age range (9–60). Indigo is:
+>
 > - **Gender-neutral** (unlike pink, which alienates Aarav or Mr. Banerjee)
 > - **Trust-conferring** (banking apps, productivity apps use it heavily)
 > - **Distinct from competitors** (most casual-game apps use red/orange/yellow palettes)
@@ -455,88 +461,88 @@ pie title Color Token Categories
 
 **Light theme palette (full M3 token set):**
 
-| Token | Hex | Notes |
-|---|---|---|
-| `primary` | `#5B57D9` | Brand |
-| `onPrimary` | `#FFFFFF` | |
-| `primaryContainer` | `#E4DFFF` | Used for selected chips, active nav |
-| `onPrimaryContainer` | `#0E0664` | |
-| `secondary` | `#3DC4A0` | |
-| `onSecondary` | `#003824` | |
-| `secondaryContainer` | `#A8F0D2` | |
-| `onSecondaryContainer` | `#002112` | |
-| `tertiary` | `#FF9E5E` | |
-| `onTertiary` | `#3A1E00` | |
-| `tertiaryContainer` | `#FFDBC4` | |
-| `onTertiaryContainer` | `#2A1500` | |
-| `error` | `#BA1A1A` | |
-| `onError` | `#FFFFFF` | |
-| `errorContainer` | `#FFDAD6` | |
-| `onErrorContainer` | `#410002` | |
-| `background` | `#FBF8FF` | |
-| `onBackground` | `#1B1A2E` | |
-| `surface` | `#FBF8FF` | |
-| `onSurface` | `#1B1A2E` | |
-| `surfaceVariant` | `#E5E0F4` | |
-| `onSurfaceVariant` | `#48465F` | |
-| `outline` | `#797686` | |
-| `outlineVariant` | `#CAC6D9` | |
-| `shadow` | `#000000` | |
-| `scrim` | `#000000` | |
+| Token                  | Hex       | Notes                               |
+| ---------------------- | --------- | ----------------------------------- |
+| `primary`              | `#5B57D9` | Brand                               |
+| `onPrimary`            | `#FFFFFF` |                                     |
+| `primaryContainer`     | `#E4DFFF` | Used for selected chips, active nav |
+| `onPrimaryContainer`   | `#0E0664` |                                     |
+| `secondary`            | `#3DC4A0` |                                     |
+| `onSecondary`          | `#003824` |                                     |
+| `secondaryContainer`   | `#A8F0D2` |                                     |
+| `onSecondaryContainer` | `#002112` |                                     |
+| `tertiary`             | `#FF9E5E` |                                     |
+| `onTertiary`           | `#3A1E00` |                                     |
+| `tertiaryContainer`    | `#FFDBC4` |                                     |
+| `onTertiaryContainer`  | `#2A1500` |                                     |
+| `error`                | `#BA1A1A` |                                     |
+| `onError`              | `#FFFFFF` |                                     |
+| `errorContainer`       | `#FFDAD6` |                                     |
+| `onErrorContainer`     | `#410002` |                                     |
+| `background`           | `#FBF8FF` |                                     |
+| `onBackground`         | `#1B1A2E` |                                     |
+| `surface`              | `#FBF8FF` |                                     |
+| `onSurface`            | `#1B1A2E` |                                     |
+| `surfaceVariant`       | `#E5E0F4` |                                     |
+| `onSurfaceVariant`     | `#48465F` |                                     |
+| `outline`              | `#797686` |                                     |
+| `outlineVariant`       | `#CAC6D9` |                                     |
+| `shadow`               | `#000000` |                                     |
+| `scrim`                | `#000000` |                                     |
 
 **Dark theme palette:**
 
-| Token | Hex | Notes |
-|---|---|---|
-| `primary` | `#A8A4FF` | Lighter for dark mode (M3 rule) |
-| `onPrimary` | `#1F1A6E` | |
-| `primaryContainer` | `#363087` | |
-| `onPrimaryContainer` | `#E4DFFF` | |
-| `secondary` | `#8DD4B8` | |
-| `onSecondary` | `#003828` | |
-| `secondaryContainer` | `#00573D` | |
-| `onSecondaryContainer` | `#A8F0D2` | |
-| `tertiary` | `#FFB689` | |
-| `onTertiary` | `#4A2700` | |
-| `tertiaryContainer` | `#693C00` | |
-| `onTertiaryContainer` | `#FFDBC4` | |
-| `error` | `#FFB4AB` | |
-| `onError` | `#690005` | |
-| `errorContainer` | `#93000A` | |
-| `onErrorContainer` | `#FFDAD6` | |
-| `background` | `#13121F` | |
-| `onBackground` | `#E5E1F3` | |
-| `surface` | `#13121F` | |
-| `onSurface` | `#E5E1F3` | |
-| `surfaceVariant` | `#48465F` | |
-| `onSurfaceVariant` | `#CAC6D9` | |
-| `outline` | `#938F99` | |
-| `outlineVariant` | `#48465F` | |
-| `shadow` | `#000000` | |
-| `scrim` | `#000000` | |
+| Token                  | Hex       | Notes                           |
+| ---------------------- | --------- | ------------------------------- |
+| `primary`              | `#A8A4FF` | Lighter for dark mode (M3 rule) |
+| `onPrimary`            | `#1F1A6E` |                                 |
+| `primaryContainer`     | `#363087` |                                 |
+| `onPrimaryContainer`   | `#E4DFFF` |                                 |
+| `secondary`            | `#8DD4B8` |                                 |
+| `onSecondary`          | `#003828` |                                 |
+| `secondaryContainer`   | `#00573D` |                                 |
+| `onSecondaryContainer` | `#A8F0D2` |                                 |
+| `tertiary`             | `#FFB689` |                                 |
+| `onTertiary`           | `#4A2700` |                                 |
+| `tertiaryContainer`    | `#693C00` |                                 |
+| `onTertiaryContainer`  | `#FFDBC4` |                                 |
+| `error`                | `#FFB4AB` |                                 |
+| `onError`              | `#690005` |                                 |
+| `errorContainer`       | `#93000A` |                                 |
+| `onErrorContainer`     | `#FFDAD6` |                                 |
+| `background`           | `#13121F` |                                 |
+| `onBackground`         | `#E5E1F3` |                                 |
+| `surface`              | `#13121F` |                                 |
+| `onSurface`            | `#E5E1F3` |                                 |
+| `surfaceVariant`       | `#48465F` |                                 |
+| `onSurfaceVariant`     | `#CAC6D9` |                                 |
+| `outline`              | `#938F99` |                                 |
+| `outlineVariant`       | `#48465F` |                                 |
+| `shadow`               | `#000000` |                                 |
+| `scrim`                | `#000000` |                                 |
 
 ### 5.3 Semantic colours
 
-Beyond M3 tokens, we layer three semantic colours for game-specific meaning. These are *fixed* — they do not change with the user's Material You palette, because they need to be predictable across games (e.g., "red always means danger").
+Beyond M3 tokens, we layer three semantic colours for game-specific meaning. These are _fixed_ — they do not change with the user's Material You palette, because they need to be predictable across games (e.g., "red always means danger").
 
-| Semantic | Light | Dark | Use |
-|---|---|---|---|
-| `game.danger` | `#D32F2F` | `#FF8A80` | Mine in MineSneeker, wrong letter in Hangman, Snake self-collision warning |
-| `game.success` | `#2E7D32` | `#A5D6A7` | Correct guess, food eaten, line cleared |
-| `game.warning` | `#F57C00` | `#FFB74D` | Hangman at 4/6 wrong, Snake near wall, "1 move left" |
+| Semantic       | Light     | Dark      | Use                                                                        |
+| -------------- | --------- | --------- | -------------------------------------------------------------------------- |
+| `game.danger`  | `#D32F2F` | `#FF8A80` | Mine in MineSneeker, wrong letter in Hangman, Snake self-collision warning |
+| `game.success` | `#2E7D32` | `#A5D6A7` | Correct guess, food eaten, line cleared                                    |
+| `game.warning` | `#F57C00` | `#FFB74D` | Hangman at 4/6 wrong, Snake near wall, "1 move left"                       |
 
 ### 5.4 Per-game accent colours
 
 Each of the 6 games has a single accent colour used for its tile, hero, and primary buttons within that game. The accent does **not** replace the M3 primary — it's an additional token in the game's theme.
 
-| Game | Accent | Hex | Why this colour |
-|---|---|---|---|
-| Tic Tac Toe | Amethyst | `#9D4EDD` | Two-player = distinct from solo play palettes |
-| Hangman | Slate | `#52677B` | Editorial, "letter game" feel |
-| Rock Paper Scissors | Coral | `#FF6B6B` | High-energy, choice-driven |
-| MineSneeker | Steel | `#37474F` | Military/utilitarian, fits the minesweeper aesthetic |
-| Snake | Forest | `#2E7D32` | Green = snake, classic |
-| Block Drop | Cyan | `#00BCD4` | Cool counterpoint to the warm game pieces |
+| Game                | Accent   | Hex       | Why this colour                                      |
+| ------------------- | -------- | --------- | ---------------------------------------------------- |
+| Tic Tac Toe         | Amethyst | `#9D4EDD` | Two-player = distinct from solo play palettes        |
+| Hangman             | Slate    | `#52677B` | Editorial, "letter game" feel                        |
+| Rock Paper Scissors | Coral    | `#FF6B6B` | High-energy, choice-driven                           |
+| MineSneeker         | Steel    | `#37474F` | Military/utilitarian, fits the minesweeper aesthetic |
+| Snake               | Forest   | `#2E7D32` | Green = snake, classic                               |
+| Block Drop          | Cyan     | `#00BCD4` | Cool counterpoint to the warm game pieces            |
 
 > **Why per-game accents.** Without them, every game tile looks identical except for the icon — and icons at 56×56 dp don't differentiate much. The accent gives the Home grid personality and helps users spot "their" game in a glance. Importantly, **the accent only appears on game-specific surfaces**; navigation, settings, and profile all stay on the M3 brand palette.
 
@@ -544,19 +550,20 @@ Each of the 6 games has a single accent colour used for its tile, hero, and prim
 
 Per `PRD.md §7.4` and Section 11 (Accessibility), the 7 tetromino pieces must be distinguishable under **deuteranopia** (red-green colour blindness, the most common form, ~5% of male Indian users).
 
-| Piece | Colour | Hex | Pattern | Why this combo |
-|---|---|---|---|---|
-| I | Cyan | `#00BCD4` | Solid | Cool, no confusion |
-| O | Yellow | `#FFD600` | Solid | Bright, distinct from cyan |
-| T | Purple | `#9C27B0` | Solid | Distinct from blue under all CVD types |
-| S | Green | `#4CAF50` | Stripes (`///`) | Green needs texture to disambiguate from food |
-| Z | Red | `#F44336` | Stripes (`\\\\`) | Red also needs texture under deuteranopia |
-| J | Blue | `#1976D2` | Solid | Deep blue, no conflict |
-| L | Orange | `#FF9800` | Solid | Orange under deuteranopia looks yellow-ish but is still distinct from O's yellow due to lightness |
+| Piece | Colour | Hex       | Pattern          | Why this combo                                                                                    |
+| ----- | ------ | --------- | ---------------- | ------------------------------------------------------------------------------------------------- |
+| I     | Cyan   | `#00BCD4` | Solid            | Cool, no confusion                                                                                |
+| O     | Yellow | `#FFD600` | Solid            | Bright, distinct from cyan                                                                        |
+| T     | Purple | `#9C27B0` | Solid            | Distinct from blue under all CVD types                                                            |
+| S     | Green  | `#4CAF50` | Stripes (`///`)  | Green needs texture to disambiguate from food                                                     |
+| Z     | Red    | `#F44336` | Stripes (`\\\\`) | Red also needs texture under deuteranopia                                                         |
+| J     | Blue   | `#1976D2` | Solid            | Deep blue, no conflict                                                                            |
+| L     | Orange | `#FF9800` | Solid            | Orange under deuteranopia looks yellow-ish but is still distinct from O's yellow due to lightness |
 
 > **Why S and Z need stripes.** Under deuteranopia, `#4CAF50` (green) and `#F44336` (red) become nearly identical muddy-browns. Adding a stripe pattern (45° vs 135°) gives a second visual channel. This is the [Wong palette](https://www.nature.com/articles/nmeth.1618) approach.
 
 > **Verified with Coblis simulator:**
+>
 > - Protanopia: S and Z remain distinct (green becomes olive, red becomes olive-brown; stripes break the tie)
 > - Deuteranopia: same as above
 > - Tritanopia: rare but tested — I (cyan) becomes blue-ish; O (yellow) becomes pink-ish; still distinguishable
@@ -570,16 +577,16 @@ For users with low vision, a high-contrast variant lives in Settings → Accessi
 - Focus rings widen from 2 dp to 3 dp
 - Disabled state opacity drops from 0.38 to 0.22 (more contrast against disabled vs enabled)
 
-This is a *theme override* layered on top of Light/Dark, not a separate theme.
+This is a _theme override_ layered on top of Light/Dark, not a separate theme.
 
 ### 5.7 Status / system colours
 
-| State | Colour | Token |
-|---|---|---|
-| Online (sync up to date) | Green 600 / Green 200 | `status.online` |
-| Syncing | Brand primary, animated pulse | `status.syncing` |
-| Offline (cached) | Grey 600 / Grey 400 | `status.offline` |
-| Error (sync failed) | Error token | `status.error` |
+| State                    | Colour                        | Token            |
+| ------------------------ | ----------------------------- | ---------------- |
+| Online (sync up to date) | Green 600 / Green 200         | `status.online`  |
+| Syncing                  | Brand primary, animated pulse | `status.syncing` |
+| Offline (cached)         | Grey 600 / Grey 400           | `status.offline` |
+| Error (sync failed)      | Error token                   | `status.error`   |
 
 These appear as a small dot + label in the App Bar (Section 7.2).
 
@@ -632,29 +639,29 @@ Tokens are exported as JSON, then converted to Dart via `flutter_style_tokens` (
 {
   "color": {
     "brand": {
-      "primary":      { "light": "#5B57D9", "dark": "#A8A4FF" },
+      "primary": { "light": "#5B57D9", "dark": "#A8A4FF" },
       "primaryContainer": { "light": "#E4DFFF", "dark": "#363087" },
-      "secondary":    { "light": "#3DC4A0", "dark": "#8DD4B8" },
-      "tertiary":     { "light": "#FF9E5E", "dark": "#FFB689" }
+      "secondary": { "light": "#3DC4A0", "dark": "#8DD4B8" },
+      "tertiary": { "light": "#FF9E5E", "dark": "#FFB689" }
     },
     "surface": {
-      "background":   { "light": "#FBF8FF", "dark": "#13121F" },
-      "surface":      { "light": "#FBF8FF", "dark": "#13121F" },
+      "background": { "light": "#FBF8FF", "dark": "#13121F" },
+      "surface": { "light": "#FBF8FF", "dark": "#13121F" },
       "surfaceVariant": { "light": "#E5E0F4", "dark": "#48465F" },
-      "outline":      { "light": "#797686", "dark": "#938F99" }
+      "outline": { "light": "#797686", "dark": "#938F99" }
     },
     "semantic": {
-      "danger":       { "light": "#D32F2F", "dark": "#FF8A80" },
-      "success":      { "light": "#2E7D32", "dark": "#A5D6A7" },
-      "warning":      { "light": "#F57C00", "dark": "#FFB74D" }
+      "danger": { "light": "#D32F2F", "dark": "#FF8A80" },
+      "success": { "light": "#2E7D32", "dark": "#A5D6A7" },
+      "warning": { "light": "#F57C00", "dark": "#FFB74D" }
     },
     "game": {
-      "ticTacToe":    "#9D4EDD",
-      "hangman":      "#52677B",
-      "rps":          "#FF6B6B",
-      "mineSneeker":  "#37474F",
-      "snake":        "#2E7D32",
-      "blockDrop":    "#00BCD4"
+      "ticTacToe": "#9D4EDD",
+      "hangman": "#52677B",
+      "rps": "#FF6B6B",
+      "mineSneeker": "#37474F",
+      "snake": "#2E7D32",
+      "blockDrop": "#00BCD4"
     },
     "tetromino": {
       "I": { "fill": "#00BCD4", "pattern": "solid" },
@@ -667,63 +674,181 @@ Tokens are exported as JSON, then converted to Dart via `flutter_style_tokens` (
     }
   },
   "typography": {
-    "displayLarge":  { "size": 57, "lineHeight": 64, "weight": 400, "letterSpacing": -0.25 },
-    "displayMedium": { "size": 45, "lineHeight": 52, "weight": 400, "letterSpacing": 0 },
-    "displaySmall":  { "size": 36, "lineHeight": 44, "weight": 400, "letterSpacing": 0 },
-    "headlineLarge": { "size": 32, "lineHeight": 40, "weight": 600, "letterSpacing": 0 },
-    "headlineMedium":{ "size": 28, "lineHeight": 36, "weight": 600, "letterSpacing": 0 },
-    "headlineSmall": { "size": 24, "lineHeight": 32, "weight": 600, "letterSpacing": 0 },
-    "titleLarge":    { "size": 22, "lineHeight": 28, "weight": 600, "letterSpacing": 0 },
-    "titleMedium":   { "size": 16, "lineHeight": 24, "weight": 600, "letterSpacing": 0.15 },
-    "titleSmall":    { "size": 14, "lineHeight": 20, "weight": 600, "letterSpacing": 0.1 },
-    "bodyLarge":     { "size": 16, "lineHeight": 24, "weight": 400, "letterSpacing": 0.5 },
-    "bodyMedium":    { "size": 14, "lineHeight": 20, "weight": 400, "letterSpacing": 0.25 },
-    "bodySmall":     { "size": 12, "lineHeight": 16, "weight": 400, "letterSpacing": 0.4 },
-    "labelLarge":    { "size": 14, "lineHeight": 20, "weight": 600, "letterSpacing": 0.1 },
-    "labelMedium":   { "size": 12, "lineHeight": 16, "weight": 600, "letterSpacing": 0.5 },
-    "labelSmall":    { "size": 11, "lineHeight": 16, "weight": 600, "letterSpacing": 0.5 }
+    "displayLarge": {
+      "size": 57,
+      "lineHeight": 64,
+      "weight": 400,
+      "letterSpacing": -0.25
+    },
+    "displayMedium": {
+      "size": 45,
+      "lineHeight": 52,
+      "weight": 400,
+      "letterSpacing": 0
+    },
+    "displaySmall": {
+      "size": 36,
+      "lineHeight": 44,
+      "weight": 400,
+      "letterSpacing": 0
+    },
+    "headlineLarge": {
+      "size": 32,
+      "lineHeight": 40,
+      "weight": 600,
+      "letterSpacing": 0
+    },
+    "headlineMedium": {
+      "size": 28,
+      "lineHeight": 36,
+      "weight": 600,
+      "letterSpacing": 0
+    },
+    "headlineSmall": {
+      "size": 24,
+      "lineHeight": 32,
+      "weight": 600,
+      "letterSpacing": 0
+    },
+    "titleLarge": {
+      "size": 22,
+      "lineHeight": 28,
+      "weight": 600,
+      "letterSpacing": 0
+    },
+    "titleMedium": {
+      "size": 16,
+      "lineHeight": 24,
+      "weight": 600,
+      "letterSpacing": 0.15
+    },
+    "titleSmall": {
+      "size": 14,
+      "lineHeight": 20,
+      "weight": 600,
+      "letterSpacing": 0.1
+    },
+    "bodyLarge": {
+      "size": 16,
+      "lineHeight": 24,
+      "weight": 400,
+      "letterSpacing": 0.5
+    },
+    "bodyMedium": {
+      "size": 14,
+      "lineHeight": 20,
+      "weight": 400,
+      "letterSpacing": 0.25
+    },
+    "bodySmall": {
+      "size": 12,
+      "lineHeight": 16,
+      "weight": 400,
+      "letterSpacing": 0.4
+    },
+    "labelLarge": {
+      "size": 14,
+      "lineHeight": 20,
+      "weight": 600,
+      "letterSpacing": 0.1
+    },
+    "labelMedium": {
+      "size": 12,
+      "lineHeight": 16,
+      "weight": 600,
+      "letterSpacing": 0.5
+    },
+    "labelSmall": {
+      "size": 11,
+      "lineHeight": 16,
+      "weight": 600,
+      "letterSpacing": 0.5
+    }
   },
   "spacing": {
-    "0":  0, "1": 2, "2": 4, "3": 8, "4": 12, "5": 16, "6": 20, "7": 24,
-    "8":  32, "9": 40, "10": 48, "11": 56, "12": 64, "13": 80, "14": 96
+    "0": 0,
+    "1": 2,
+    "2": 4,
+    "3": 8,
+    "4": 12,
+    "5": 16,
+    "6": 20,
+    "7": 24,
+    "8": 32,
+    "9": 40,
+    "10": 48,
+    "11": 56,
+    "12": 64,
+    "13": 80,
+    "14": 96
   },
   "radius": {
-    "none": 0, "xs": 4, "sm": 8, "md": 12, "lg": 16, "xl": 20, "2xl": 24,
-    "3xl": 28, "full": 9999
+    "none": 0,
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 20,
+    "2xl": 24,
+    "3xl": 28,
+    "full": 9999
   },
   "elevation": {
     "0": { "level": 0, "shadow": "none" },
-    "1": { "level": 1, "shadow": "0 1px 2px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06)" },
-    "2": { "level": 3, "shadow": "0 2px 4px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.08)" },
-    "3": { "level": 6, "shadow": "0 4px 8px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.10)" },
-    "4": { "level": 12, "shadow": "0 8px 16px rgba(0,0,0,0.14), 0 16px 32px rgba(0,0,0,0.12)" }
+    "1": {
+      "level": 1,
+      "shadow": "0 1px 2px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06)"
+    },
+    "2": {
+      "level": 3,
+      "shadow": "0 2px 4px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.08)"
+    },
+    "3": {
+      "level": 6,
+      "shadow": "0 4px 8px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.10)"
+    },
+    "4": {
+      "level": 12,
+      "shadow": "0 8px 16px rgba(0,0,0,0.14), 0 16px 32px rgba(0,0,0,0.12)"
+    }
   },
   "motion": {
     "duration": {
       "instant": 0,
-      "fast":     150,
-      "medium":   250,
-      "slow":     400,
+      "fast": 150,
+      "medium": 250,
+      "slow": 400,
       "pageTransition": 300
     },
     "easing": {
-      "standard":     "cubic-bezier(0.2, 0.0, 0.0, 1.0)",
-      "decelerate":   "cubic-bezier(0.0, 0.0, 0.2, 1.0)",
-      "accelerate":   "cubic-bezier(0.4, 0.0, 1.0, 1.0)",
-      "emphasized":   "cubic-bezier(0.2, 0.0, 0.0, 1.0)",
-      "spring":       "spring(damping: 0.7, stiffness: 380)"
+      "standard": "cubic-bezier(0.2, 0.0, 0.0, 1.0)",
+      "decelerate": "cubic-bezier(0.0, 0.0, 0.2, 1.0)",
+      "accelerate": "cubic-bezier(0.4, 0.0, 1.0, 1.0)",
+      "emphasized": "cubic-bezier(0.2, 0.0, 0.0, 1.0)",
+      "spring": "spring(damping: 0.7, stiffness: 380)"
     }
   },
   "opacity": {
-    "disabled":   0.38,
-    "hover":      0.08,
-    "pressed":    0.12,
-    "focus":      0.12,
-    "scrim":      0.32,
+    "disabled": 0.38,
+    "hover": 0.08,
+    "pressed": 0.12,
+    "focus": 0.12,
+    "scrim": 0.32,
     "highContrastDisabled": 0.22
   },
-  "iconSize": { "small": 16, "medium": 20, "large": 24, "xlarge": 32, "gameTile": 56 },
-  "touchTarget": { "minimum": 48, "comfortable": 56, "primary": 56, "inGame": 64 }
+  "iconSize": {
+    "small": 16,
+    "medium": 20,
+    "large": 24,
+    "xlarge": 32,
+    "gameTile": 56
+  },
+  "touchTarget": {
+    "minimum": 48,
+    "comfortable": 56,
+    "primary": 56,
+    "inGame": 64
+  }
 }
 ```
 
@@ -801,36 +926,36 @@ graph TB
   Organisms --> Templates
 ```
 
-| # | Component | Used on screens |
-|---|---|---|
-| 1 | `AppBar` (4 variants) | All screens |
-| 2 | `Button` (5 variants) | All screens |
-| 3 | `Card` (3 variants) | Home, Game Detail, Profile |
-| 4 | `Dialog` (3 variants) | Confirmations, errors |
-| 5 | `Snackbar` | All screens |
-| 6 | `BottomSheet` (2 variants) | Filters, game options |
-| 7 | `Chip` (4 variants) | Home (personalization), filters |
-| 8 | `TabBar` (2 variants) | Game Detail, Settings |
-| 9 | `NavigationBar` | Home (bottom) |
-| 10 | `NavigationDrawer` | Profile, fallback nav |
-| 11 | `Avatar` | Profile, leaderboard, comments |
-| 12 | `Badge` | App icon, in-game notifications |
-| 13 | `ProgressBar` | Loading, level progress |
-| 14 | `GameCard` | Home grid, Category |
-| 15 | `ScoreBoard` | Game result, in-game HUD |
-| 16 | `LeaderboardRow` | Game Detail leaderboard tab |
-| 17 | `AchievementBadge` | Profile, toast |
-| 18 | `EmptyState` | Profile, Leaderboard |
-| 19 | `ErrorState` | Network errors, auth errors |
-| 20 | `LoadingShimmer` | List placeholders |
-| 21 | `TouchDPad` | Snake (4 directions) |
-| 22 | `SwipeArea` | Block Drop, Sky Hop |
-| 23 | `SegmentedControl` | Settings (theme) |
-| 24 | `Switch` | Settings |
-| 25 | `Slider` | Settings (sound, haptics) |
-| 26 | `TextField` | Auth, profile, settings |
-| 27 | `ListTile` | Settings, profile, leaderboard |
-| 28 | `Tooltip` | Discovery (game difficulty explainer) |
+| #   | Component                  | Used on screens                       |
+| --- | -------------------------- | ------------------------------------- |
+| 1   | `AppBar` (4 variants)      | All screens                           |
+| 2   | `Button` (5 variants)      | All screens                           |
+| 3   | `Card` (3 variants)        | Home, Game Detail, Profile            |
+| 4   | `Dialog` (3 variants)      | Confirmations, errors                 |
+| 5   | `Snackbar`                 | All screens                           |
+| 6   | `BottomSheet` (2 variants) | Filters, game options                 |
+| 7   | `Chip` (4 variants)        | Home (personalization), filters       |
+| 8   | `TabBar` (2 variants)      | Game Detail, Settings                 |
+| 9   | `NavigationBar`            | Home (bottom)                         |
+| 10  | `NavigationDrawer`         | Profile, fallback nav                 |
+| 11  | `Avatar`                   | Profile, leaderboard, comments        |
+| 12  | `Badge`                    | App icon, in-game notifications       |
+| 13  | `ProgressBar`              | Loading, level progress               |
+| 14  | `GameCard`                 | Home grid, Category                   |
+| 15  | `ScoreBoard`               | Game result, in-game HUD              |
+| 16  | `LeaderboardRow`           | Game Detail leaderboard tab           |
+| 17  | `AchievementBadge`         | Profile, toast                        |
+| 18  | `EmptyState`               | Profile, Leaderboard                  |
+| 19  | `ErrorState`               | Network errors, auth errors           |
+| 20  | `LoadingShimmer`           | List placeholders                     |
+| 21  | `TouchDPad`                | Snake (4 directions)                  |
+| 22  | `SwipeArea`                | Block Drop, Sky Hop                   |
+| 23  | `SegmentedControl`         | Settings (theme)                      |
+| 24  | `Switch`                   | Settings                              |
+| 25  | `Slider`                   | Settings (sound, haptics)             |
+| 26  | `TextField`                | Auth, profile, settings               |
+| 27  | `ListTile`                 | Settings, profile, leaderboard        |
+| 28  | `Tooltip`                  | Discovery (game difficulty explainer) |
 
 ### 7.2 Component 1 — AppBar (4 variants)
 
@@ -861,22 +986,23 @@ stateDiagram-v2
 
 **Anatomy:**
 
-| Slot | Component | Notes |
-|---|---|---|
-| `leading` | IconButton (48 dp) | Back arrow OR drawer toggle |
-| `title` | `title.large` text or custom widget | Max 1 line, ellipsis |
-| `actions` | Up to 3 IconButtons | Sync status, profile, overflow |
-| `bottom` | Optional TabBar | For tabbed screens |
+| Slot      | Component                           | Notes                          |
+| --------- | ----------------------------------- | ------------------------------ |
+| `leading` | IconButton (48 dp)                  | Back arrow OR drawer toggle    |
+| `title`   | `title.large` text or custom widget | Max 1 line, ellipsis           |
+| `actions` | Up to 3 IconButtons                 | Sync status, profile, overflow |
+| `bottom`  | Optional TabBar                     | For tabbed screens             |
 
 **States:**
 
-| State | Behaviour |
-|---|---|
-| Default | White/dark surface, 1 dp bottom border in `outlineVariant` |
-| Scrolled | Elevation 2, surface tint from primary |
-| Modal | No leading icon; close icon (X) instead of back |
+| State    | Behaviour                                                  |
+| -------- | ---------------------------------------------------------- |
+| Default  | White/dark surface, 1 dp bottom border in `outlineVariant` |
+| Scrolled | Elevation 2, surface tint from primary                     |
+| Modal    | No leading icon; close icon (X) instead of back            |
 
 **A11y:**
+
 - `Semantics(header: true)` on title
 - All action buttons get `tooltip` (auto-translated)
 - Back button is labelled "Back" not "Arrow left"
@@ -934,33 +1060,34 @@ stateDiagram-v2
        24 dp padding
 ```
 
-| Variant | When to use | Background | Foreground | Border |
-|---|---|---|---|---|
-| `filled` | Primary action (1 per screen max) | primary | onPrimary | none |
-| `tonal` | Secondary action | secondaryContainer | onSecondaryContainer | none |
-| `outlined` | Tertiary action | transparent | primary | 1 dp outline |
-| `text` | Low-emphasis (link) | transparent | primary | none |
-| `icon` | Compact icon-only (toolbar) | transparent | onSurface | none |
+| Variant    | When to use                       | Background         | Foreground           | Border       |
+| ---------- | --------------------------------- | ------------------ | -------------------- | ------------ |
+| `filled`   | Primary action (1 per screen max) | primary            | onPrimary            | none         |
+| `tonal`    | Secondary action                  | secondaryContainer | onSecondaryContainer | none         |
+| `outlined` | Tertiary action                   | transparent        | primary              | 1 dp outline |
+| `text`     | Low-emphasis (link)               | transparent        | primary              | none         |
+| `icon`     | Compact icon-only (toolbar)       | transparent        | onSurface            | none         |
 
 **Sizes:**
 
-| Size | Height | Padding H | Font |
-|---|---|---|---|
-| Large | 56 dp | 24 | label.large |
-| Medium | 48 dp | 16 | label.large |
-| Small | 36 dp | 12 | label.medium |
+| Size   | Height | Padding H | Font         |
+| ------ | ------ | --------- | ------------ |
+| Large  | 56 dp  | 24        | label.large  |
+| Medium | 48 dp  | 16        | label.large  |
+| Small  | 36 dp  | 12        | label.medium |
 
 **States:**
 
-| State | Visual |
-|---|---|
-| Default | As designed |
-| Hover | +8% primary overlay (web/desktop only) |
-| Pressed | +12% primary overlay, scale 0.98 |
-| Focused | 2 dp outline ring (offset -2 dp) |
-| Disabled | 38% opacity, no shadow |
+| State    | Visual                                 |
+| -------- | -------------------------------------- |
+| Default  | As designed                            |
+| Hover    | +8% primary overlay (web/desktop only) |
+| Pressed  | +12% primary overlay, scale 0.98       |
+| Focused  | 2 dp outline ring (offset -2 dp)       |
+| Disabled | 38% opacity, no shadow                 |
 
 **A11y:**
+
 - Minimum 48 dp height (we ship 48/56 only — `small` is reserved for dense lists)
 - `Semantics(button: true, label: <text>)`
 - Loading state: replace label with `CircularProgressIndicator`, set `Semantics(liveRegion: true)` so screen readers announce "Loading"
@@ -990,6 +1117,7 @@ FilledButton(
 **Variants:** `elevated`, `filled`, `outlined`.
 
 **Use:**
+
 - `elevated` — game tiles on Home (one card = one game)
 - `filled` — leaderboard rows, settings group containers
 - `outlined` — achievement cards, profile summary
@@ -1017,13 +1145,14 @@ FilledButton(
 
 **States:**
 
-| State | Visual |
-|---|---|
-| Default | Elevation 1, surface |
-| Pressed | Elevation 0, primaryContainer tint |
-| Long-press | Opens context menu (BottomSheet) |
+| State      | Visual                             |
+| ---------- | ---------------------------------- |
+| Default    | Elevation 1, surface               |
+| Pressed    | Elevation 0, primaryContainer tint |
+| Long-press | Opens context menu (BottomSheet)   |
 
 **A11y:**
+
 - Entire card is a single tappable region (one `Semantics(button: true, label: 'Play Tic Tac Toe')`)
 - No nested tappables (the play button is decorative)
 
@@ -1063,18 +1192,20 @@ sequenceDiagram
 
 **Usage rules:**
 
-| Variant | When | Max width |
-|---|---|---|
-| `alert` | One-button info | 280 dp |
-| `confirm` | Two-button decision | 320 dp |
-| `custom` | Game results (score, share) | 360 dp |
+| Variant   | When                        | Max width |
+| --------- | --------------------------- | --------- |
+| `alert`   | One-button info             | 280 dp    |
+| `confirm` | Two-button decision         | 320 dp    |
+| `custom`  | Game results (score, share) | 360 dp    |
 
 **Rules:**
+
 - Always `barrierDismissible: true` for `alert`, `false` for `confirm` with destructive action
 - Always include a Cancel-equivalent escape (close icon for alert)
 - Title max 1 line, body max 4 lines; longer copy goes in a BottomSheet
 
 **A11y:**
+
 - Trap focus inside dialog
 - `Semantics(scopesRoute: true)` so TalkBack announces "Dialog appeared"
 - First focus on Cancel (safer default)
@@ -1091,12 +1222,14 @@ sequenceDiagram
 ```
 
 **Behaviour:**
+
 - Single-line message + optional action (max 8 chars)
 - 4 second duration (8 with action)
 - Max 1 snackbar visible; queue additional
 - Stacks above bottom nav by 16 dp
 
 **A11y:**
+
 - `Semantics(liveRegion: true)` so screen readers interrupt to announce
 - Action button always labelled (no icon-only)
 
@@ -1122,6 +1255,7 @@ sequenceDiagram
 ```
 
 **Behaviour:**
+
 - Drag handle is always tappable
 - Drag-down dismisses (≥ 200 dp swipe or 0.5 velocity)
 - Back button dismisses
@@ -1140,12 +1274,12 @@ sequenceDiagram
    8 dp radius, 32 dp tall
 ```
 
-| Variant | Use | Trailing icon |
-|---|---|---|
-| `filter` | Filter bar on Category screen | Optional check (selected) |
-| `input` | Form chips (e.g., picked avatars) | Always × (removable) |
-| `action` | "Play again", "Share score" | None |
-| `suggestion` | Onboarding (e.g., "Popular categories") | Optional chevron |
+| Variant      | Use                                     | Trailing icon             |
+| ------------ | --------------------------------------- | ------------------------- |
+| `filter`     | Filter bar on Category screen           | Optional check (selected) |
+| `input`      | Form chips (e.g., picked avatars)       | Always × (removable)      |
+| `action`     | "Play again", "Share score"             | None                      |
+| `suggestion` | Onboarding (e.g., "Popular categories") | Optional chevron          |
 
 **States:** default, selected (primaryContainer bg), focused, disabled.
 
@@ -1175,6 +1309,7 @@ sequenceDiagram
 **Active indicator:** 64 dp pill behind icon, primaryContainer background.
 
 **A11y:**
+
 - Each destination is a `Semantics(button: true, selected: <bool>, label: 'Home, tab 1 of 4')`
 - Long-press shows tooltip with destination name
 - Haptic feedback on tap (light impact)
@@ -1196,6 +1331,7 @@ Used as fallback on tablets (≥ 600 dp) per `TRD.md §3` (responsive layout).
 **States:** default, online (green 2 dp ring), offline (grey ring), loading (shimmer).
 
 **A11y:**
+
 - `Semantics(label: 'Avatar for Riya')` — no PII like initials in the alt text for kid accounts
 
 ### 7.13 Component 12 — Badge
@@ -1203,6 +1339,7 @@ Used as fallback on tablets (≥ 600 dp) per `TRD.md §3` (responsive layout).
 **Anatomy:** small (16 dp) pill with numeric content, anchored to top-right of parent. Colors: `error` background, `onError` foreground.
 
 **Behaviour:**
+
 - 99+ displays as `99+`
 - Hidden when value = 0
 - Animation: scale-in from 0 → 1.1 → 1.0 (200 ms, emphasised)
@@ -1287,6 +1424,7 @@ graph TB
 ```
 
 **Behaviour:**
+
 - Score number animates from 0 → final over 800 ms (cubic ease-out)
 - "+340" delta fades in 200 ms after settle
 - Negative deltas use `game.danger` colour
@@ -1316,6 +1454,7 @@ stateDiagram-v2
 **Columns:** Rank, Avatar, Name (truncate at 16 chars), Score, Medal (top 3 only).
 
 **States:**
+
 - Default row
 - Current-user row: primaryContainer background
 - Loading row: shimmer placeholder
@@ -1327,6 +1466,7 @@ stateDiagram-v2
 **Sizes:** `sm` (48), `md` (72), `lg` (96), `xlarge` (144 — showcase).
 
 **States:**
+
 - `locked` — greyscale icon, 60% opacity
 - `unlocked` — full colour, gold ring (8 dp outline in `#FFD600`)
 - `new` — pulse glow ring for 30 days after unlock
@@ -1380,6 +1520,7 @@ Same anatomy as EmptyState, but with `game.danger` accent and a retry action.
 **Anatomy:** grey rectangles matching the eventual row's shape, animated left-to-right gradient sweep (1.5 s loop).
 
 **Rules:**
+
 - Show shimmer for ≥ 400 ms to avoid flash
 - Max shimmer duration 10 s — after that, swap to ErrorState
 
@@ -1389,7 +1530,7 @@ Same anatomy as EmptyState, but with `game.danger` accent and a retry action.
 
 ```
               [▲]
-       64 dp  
+       64 dp
         ┌────┐
         │ ▲  │   <- 64 dp touch target
         └────┘
@@ -1404,6 +1545,7 @@ Same anatomy as EmptyState, but with `game.danger` accent and a retry action.
 **Positioning:** bottom-right for right-handed default (per persona Aarav). User can flip via Settings → Controls → "Left-handed mode" which swaps to bottom-left.
 
 **A11y:**
+
 - Each arrow: `Semantics(button: true, label: 'Move up')`
 - Custom key bindings for Switch Control / external keyboard
 - D-pad focus order: ← → ↑ ↓
@@ -1470,6 +1612,7 @@ Used for Sound volume (0–100) and Haptics intensity (Off / Light / Medium / St
 **Validation:** inline error appears below field in `body.small` + error colour, max 1 line.
 
 **A11y:**
+
 - Floating label always announced: "Email, required"
 - Error: "Email, invalid, must contain @"
 - `autofillHints` set per field (email, password, name)
@@ -1572,36 +1715,36 @@ stateDiagram-v2
 
 Per `TRD.md §3.2`, we use `go_router`. Routes:
 
-| Path | Page | Auth required |
-|---|---|---|
-| `/` | RouteGate (splash → decides) | No |
-| `/onboarding` | OnboardingFlow | No |
-| `/auth/sign-in` | SignIn | No |
-| `/auth/sign-up` | SignUp | No |
-| `/auth/forgot` | ForgotPassword | No |
-| `/auth/guest-info` | GuestInfo (collect display name) | No |
-| `/home` | Home | Optional |
-| `/games` | AllGames (list) | Optional |
-| `/games/category/:slug` | CategoryScreen | Optional |
-| `/games/:slug` | GameDetail | Optional |
-| `/games/:slug/play` | GameSession | Optional |
-| `/games/:slug/result` | GameResult | Optional |
-| `/profile` | Profile | Yes |
-| `/profile/edit` | EditProfile | Yes |
-| `/profile/avatar` | AvatarPicker | Yes |
-| `/profile/stats` | Stats | Yes |
-| `/achievements/:id` | AchievementDetail | Yes |
-| `/leaderboard/:gameSlug` | Leaderboard | Optional |
-| `/settings` | Settings | Yes |
-| `/settings/theme` | ThemeSettings | Yes |
-| `/settings/sound` | SoundSettings | Yes |
-| `/settings/haptics` | HapticsSettings | Yes |
-| `/settings/language` | LanguageSettings | Yes |
-| `/settings/notifications` | NotificationsSettings | Yes |
-| `/settings/privacy` | PrivacySettings | Yes |
-| `/settings/data-export` | DataExport | Yes |
-| `/settings/remove-ads` | RemoveAdsIAP | Optional |
-| `/achievements` | AchievementsList | Yes |
+| Path                      | Page                             | Auth required |
+| ------------------------- | -------------------------------- | ------------- |
+| `/`                       | RouteGate (splash → decides)     | No            |
+| `/onboarding`             | OnboardingFlow                   | No            |
+| `/auth/sign-in`           | SignIn                           | No            |
+| `/auth/sign-up`           | SignUp                           | No            |
+| `/auth/forgot`            | ForgotPassword                   | No            |
+| `/auth/guest-info`        | GuestInfo (collect display name) | No            |
+| `/home`                   | Home                             | Optional      |
+| `/games`                  | AllGames (list)                  | Optional      |
+| `/games/category/:slug`   | CategoryScreen                   | Optional      |
+| `/games/:slug`            | GameDetail                       | Optional      |
+| `/games/:slug/play`       | GameSession                      | Optional      |
+| `/games/:slug/result`     | GameResult                       | Optional      |
+| `/profile`                | Profile                          | Yes           |
+| `/profile/edit`           | EditProfile                      | Yes           |
+| `/profile/avatar`         | AvatarPicker                     | Yes           |
+| `/profile/stats`          | Stats                            | Yes           |
+| `/achievements/:id`       | AchievementDetail                | Yes           |
+| `/leaderboard/:gameSlug`  | Leaderboard                      | Optional      |
+| `/settings`               | Settings                         | Yes           |
+| `/settings/theme`         | ThemeSettings                    | Yes           |
+| `/settings/sound`         | SoundSettings                    | Yes           |
+| `/settings/haptics`       | HapticsSettings                  | Yes           |
+| `/settings/language`      | LanguageSettings                 | Yes           |
+| `/settings/notifications` | NotificationsSettings            | Yes           |
+| `/settings/privacy`       | PrivacySettings                  | Yes           |
+| `/settings/data-export`   | DataExport                       | Yes           |
+| `/settings/remove-ads`    | RemoveAdsIAP                     | Optional      |
+| `/achievements`           | AchievementsList                 | Yes           |
 
 ### 8.3 Navigation map (Mermaid — graph LR)
 
@@ -1632,8 +1775,8 @@ graph LR
 
 ### 8.4 Bottom nav vs drawer
 
-| Phone (360–599 dp) | Tablet (≥ 600 dp) |
-|---|---|
+| Phone (360–599 dp)                    | Tablet (≥ 600 dp)                      |
+| ------------------------------------- | -------------------------------------- |
 | Bottom NavigationBar (4 destinations) | NavigationRail (left edge, persistent) |
 
 Switch happens at 600 dp width per M3 spec. On foldables, the active half dictates the layout (see Section 10).
@@ -1652,14 +1795,14 @@ gamesplatform://achievement/<id>
 
 ### 8.6 Back behaviour
 
-| Surface | Back behaviour |
-|---|---|
-| Home | System back → exit app (no-op if root) |
-| Game Session | System back → Pause dialog (not direct exit) |
-| Game Detail | System back → previous screen |
-| BottomSheet | System back → dismiss sheet |
-| Dialog | System back → dismiss (for alert) or no-op (for destructive confirm) |
-| Modal full-screen | System back → confirm dismiss if dirty |
+| Surface           | Back behaviour                                                       |
+| ----------------- | -------------------------------------------------------------------- |
+| Home              | System back → exit app (no-op if root)                               |
+| Game Session      | System back → Pause dialog (not direct exit)                         |
+| Game Detail       | System back → previous screen                                        |
+| BottomSheet       | System back → dismiss sheet                                          |
+| Dialog            | System back → dismiss (for alert) or no-op (for destructive confirm) |
+| Modal full-screen | System back → confirm dismiss if dirty                               |
 
 ### 8.7 Component hierarchy — Home (Mermaid graph TB)
 
@@ -1807,24 +1950,24 @@ flowchart LR
 
 ### 9.4 Density presets
 
-| Density | Use case | Touch target | Body text | Spacing base |
-|---|---|---|---|---|
-| `comfortable` (default) | All v1.0 screens | 48 dp | 16 sp | 4 dp |
-| `compact` | Settings list, leaderboard (≥ 600 dp) | 44 dp | 14 sp | 4 dp |
-| `accessible` | When user toggles "Larger text" or scale ≥ 1.3 | 56 dp | 18 sp | 4 dp |
+| Density                 | Use case                                       | Touch target | Body text | Spacing base |
+| ----------------------- | ---------------------------------------------- | ------------ | --------- | ------------ |
+| `comfortable` (default) | All v1.0 screens                               | 48 dp        | 16 sp     | 4 dp         |
+| `compact`               | Settings list, leaderboard (≥ 600 dp)          | 44 dp        | 14 sp     | 4 dp         |
+| `accessible`            | When user toggles "Larger text" or scale ≥ 1.3 | 56 dp        | 18 sp     | 4 dp         |
 
 Density is a `ThemeData` extension, not a runtime override. Selected in Settings → Display.
 
 ### 9.5 Padding rules
 
-| Surface | Horizontal padding |
-|---|---|
-| Full-width screens (Home, Settings) | 16 dp |
-| Forms (Sign In, Edit Profile) | 24 dp |
-| Lists with leading icons | 16 dp |
-| Modal sheets | 24 dp |
-| Cards inside grids | 0 (parent provides) |
-| Bottom nav safe area | 16 dp + gesture inset |
+| Surface                             | Horizontal padding    |
+| ----------------------------------- | --------------------- |
+| Full-width screens (Home, Settings) | 16 dp                 |
+| Forms (Sign In, Edit Profile)       | 24 dp                 |
+| Lists with leading icons            | 16 dp                 |
+| Modal sheets                        | 24 dp                 |
+| Cards inside grids                  | 0 (parent provides)   |
+| Bottom nav safe area                | 16 dp + gesture inset |
 
 ---
 
@@ -1846,23 +1989,23 @@ graph TB
 
 Material 3 window-size classes:
 
-| Class | Width range | Devices |
-|---|---|---|
-| `compact` | 0–599 dp | Phones (portrait) |
-| `medium` | 600–839 dp | Small tablets, large phones (landscape), foldables open |
-| `expanded` | 840+ dp | Tablets, desktop preview (v1.1) |
+| Class      | Width range | Devices                                                 |
+| ---------- | ----------- | ------------------------------------------------------- |
+| `compact`  | 0–599 dp    | Phones (portrait)                                       |
+| `medium`   | 600–839 dp  | Small tablets, large phones (landscape), foldables open |
+| `expanded` | 840+ dp     | Tablets, desktop preview (v1.1)                         |
 
 ### 10.2 Per-screen adaptation
 
-| Screen | compact | medium | expanded |
-|---|---|---|---|
-| Home | 2-col grid | 3-col grid | 4-col grid + side rail |
-| All Games | 2-col grid | 3-col grid | 4-col grid |
-| Game Detail | Single column, hero on top | Two-column (hero + tabs side by side) | Three-column (hero / description / sidebar) |
-| Profile | Single column | Two-column (header + tabs) | Three-column (header / tabs / recent activity) |
-| Settings | Single list | Two-column (groups side-by-side) | Same with wider max-width |
-| Game Session | Full-screen canvas | Canvas centred with padding | Canvas capped at 600×900 dp, stats sidebar |
-| Leaderboard | Single column | Two-column (top 10 + rest) | Three-column |
+| Screen       | compact                    | medium                                | expanded                                       |
+| ------------ | -------------------------- | ------------------------------------- | ---------------------------------------------- |
+| Home         | 2-col grid                 | 3-col grid                            | 4-col grid + side rail                         |
+| All Games    | 2-col grid                 | 3-col grid                            | 4-col grid                                     |
+| Game Detail  | Single column, hero on top | Two-column (hero + tabs side by side) | Three-column (hero / description / sidebar)    |
+| Profile      | Single column              | Two-column (header + tabs)            | Three-column (header / tabs / recent activity) |
+| Settings     | Single list                | Two-column (groups side-by-side)      | Same with wider max-width                      |
+| Game Session | Full-screen canvas         | Canvas centred with padding           | Canvas capped at 600×900 dp, stats sidebar     |
+| Leaderboard  | Single column              | Two-column (top 10 + rest)            | Three-column                                   |
 
 ### 10.3 Game canvas sizing
 
@@ -1910,16 +2053,16 @@ flowchart LR
 
 **Every interactive element gets a `Semantics` label.**
 
-| Component | Label format |
-|---|---|
-| Game tile | "Tic Tac Toe, two-player game. Play." |
-| Score (HUD) | "Current score 1,240, high score 2,400" |
-| Hangman letter | "Letter A, not yet guessed" → "Letter A, correct, in word" |
-| MineSneeker cell | "Row 3 column 2, unrevealed" → "Row 3 column 2, mine, revealed" |
-| Snake direction button | "Move up" |
-| Block Drop swipe area | "Game area. Swipe to move, tap to rotate." |
-| Back button | "Back" (never "Arrow left") |
-| Icon-only action | `<icon semantic name> + <context>`, e.g., "Settings" |
+| Component              | Label format                                                    |
+| ---------------------- | --------------------------------------------------------------- |
+| Game tile              | "Tic Tac Toe, two-player game. Play."                           |
+| Score (HUD)            | "Current score 1,240, high score 2,400"                         |
+| Hangman letter         | "Letter A, not yet guessed" → "Letter A, correct, in word"      |
+| MineSneeker cell       | "Row 3 column 2, unrevealed" → "Row 3 column 2, mine, revealed" |
+| Snake direction button | "Move up"                                                       |
+| Block Drop swipe area  | "Game area. Swipe to move, tap to rotate."                      |
+| Back button            | "Back" (never "Arrow left")                                     |
+| Icon-only action       | `<icon semantic name> + <context>`, e.g., "Settings"            |
 
 ### 11.2 Semantics patterns
 
@@ -1953,11 +2096,11 @@ Without `container: true`, TalkBack reads "Score 1,240" as separate nodes; with 
 
 Per Section 4.6:
 
-| Layer | `MediaQuery.textScaler` |
-|---|---|
-| Body, chrome | Respects |
-| In-game HUD | Clamped at 1.2× |
-| In-game canvas text | Clamped at 1.0× |
+| Layer               | `MediaQuery.textScaler` |
+| ------------------- | ----------------------- |
+| Body, chrome        | Respects                |
+| In-game HUD         | Clamped at 1.2×         |
+| In-game canvas text | Clamped at 1.0×         |
 
 **Implementation:**
 
@@ -1982,15 +2125,15 @@ Per Section 5.5, the tetromino palette is tested with Coblis for deuteranopia, p
 
 **What changes:**
 
-| Element | Default | Reduced-motion |
-|---|---|---|
-| Page transitions | Shared-axis slide | Instant cross-fade (50 ms) |
-| Hero animations | Spring scale | Disabled, content swaps in place |
-| Score counter | 800 ms ease-out tween | Instant value swap |
-| Achievement unlock | 1.5 s burst with confetti | Static gold ring appears, no motion |
-| Bottom sheet | Spring slide | Slide with linear curve, no overshoot |
-| Splash → Home | Logo bounce | Direct fade |
-| Snackbar | Slide-up | Fade |
+| Element            | Default                   | Reduced-motion                        |
+| ------------------ | ------------------------- | ------------------------------------- |
+| Page transitions   | Shared-axis slide         | Instant cross-fade (50 ms)            |
+| Hero animations    | Spring scale              | Disabled, content swaps in place      |
+| Score counter      | 800 ms ease-out tween     | Instant value swap                    |
+| Achievement unlock | 1.5 s burst with confetti | Static gold ring appears, no motion   |
+| Bottom sheet       | Spring slide              | Slide with linear curve, no overshoot |
+| Splash → Home      | Logo bounce               | Direct fade                           |
+| Snackbar           | Slide-up                  | Fade                                  |
 
 > **Why this matters.** Per WCAG 2.3.3 (Animation from Interactions), motion can trigger vestibular disorders. The user setting is sacred — never override.
 
@@ -2247,6 +2390,7 @@ stateDiagram-v2
 Same form with: Display name field (above email), Confirm password field, Terms checkbox (required), Date of birth (required for COPPA age gate — block if < 13 from email accounts; allow with parental consent flow if anonymous).
 
 **Age gate behaviour:**
+
 - DOB < 13 → for email signup, show "Ask a parent to sign up" screen (v1.0 just blocks; v1.1 routes to parent flow)
 - Anonymous play always allowed (parent installed the app)
 
@@ -2291,14 +2435,14 @@ Single button on Sign In / Sign Up: "Continue with Apple". Required if we ever s
 
 ### 13.7 Auth error handling
 
-| Error | User message |
-|---|---|
-| Invalid credentials | "Email or password is incorrect." |
-| Network | "Can't reach our servers. Try again." |
-| Too many attempts | "Too many tries. Wait a minute." |
-| Account disabled | "This account is locked. Contact support." |
-| Email already in use | "That email is taken. Try signing in." |
-| Weak password | "Pick a stronger password (8+ chars, 1 number)." |
+| Error                | User message                                     |
+| -------------------- | ------------------------------------------------ |
+| Invalid credentials  | "Email or password is incorrect."                |
+| Network              | "Can't reach our servers. Try again."            |
+| Too many attempts    | "Too many tries. Wait a minute."                 |
+| Account disabled     | "This account is locked. Contact support."       |
+| Email already in use | "That email is taken. Try signing in."           |
+| Weak password        | "Pick a stronger password (8+ chars, 1 number)." |
 
 All errors appear as inline field errors + a SnackBar.
 
@@ -2371,13 +2515,13 @@ Primary destination after auth. Communicate "what can I play right now" in < 3 s
 
 ### 14.3 Component breakdown
 
-| Section | Component | Behaviour |
-|---|---|---|
-| AppBar | `AppBar.main` | Sync status dot, search, profile, overflow |
-| Hero | `HeroCard` | Editorial feature; rotated weekly by remote config |
-| Recently played | `HorizontalCardList` | Empty state if none |
-| Categories | `ChipRow` (scrollable) | "All" default; multi-select in v1.1 |
-| Game grid | `GridView.builder` (2 cols) | Lazy-loaded |
+| Section         | Component                   | Behaviour                                          |
+| --------------- | --------------------------- | -------------------------------------------------- |
+| AppBar          | `AppBar.main`               | Sync status dot, search, profile, overflow         |
+| Hero            | `HeroCard`                  | Editorial feature; rotated weekly by remote config |
+| Recently played | `HorizontalCardList`        | Empty state if none                                |
+| Categories      | `ChipRow` (scrollable)      | "All" default; multi-select in v1.1                |
+| Game grid       | `GridView.builder` (2 cols) | Lazy-loaded                                        |
 
 ### 14.4 Empty states
 
@@ -2571,6 +2715,7 @@ Same 24-option grid as Guest setup. Selected has primary ring.
 ### 16.4 Statistics
 
 Detailed breakdown:
+
 - Per-game stats (cards in a list)
 - Time-of-day heatmap (v1.1)
 - Win/loss ratios per game
@@ -2777,13 +2922,13 @@ you begin a game."
 
 ### 18.4 Rarity tiers
 
-| Tier | % of players | Visual |
-|---|---|---|
-| Common | 50–100% | Bronze ring |
-| Uncommon | 15–50% | Silver ring |
-| Rare | 2–15% | Gold ring |
-| Epic | 0.5–2% | Animated rainbow ring |
-| Legendary | < 0.5% | Animated holographic ring + sparkle particles |
+| Tier      | % of players | Visual                                        |
+| --------- | ------------ | --------------------------------------------- |
+| Common    | 50–100%      | Bronze ring                                   |
+| Uncommon  | 15–50%       | Silver ring                                   |
+| Rare      | 2–15%        | Gold ring                                     |
+| Epic      | 0.5–2%       | Animated rainbow ring                         |
+| Legendary | < 0.5%       | Animated holographic ring + sparkle particles |
 
 ---
 
@@ -2972,12 +3117,12 @@ stateDiagram-v2
 
 ### 21.5 Shimmer vs spinner guidance
 
-| Use shimmer | Use spinner |
-|---|---|
-| Lists, cards | Single action in progress |
-| Image placeholders | File upload / download |
-| Initial page load | "Loading game…" with progress |
-| Search results loading | Save / submit buttons |
+| Use shimmer            | Use spinner                   |
+| ---------------------- | ----------------------------- |
+| Lists, cards           | Single action in progress     |
+| Image placeholders     | File upload / download        |
+| Initial page load      | "Loading game…" with progress |
+| Search results loading | Save / submit buttons         |
 
 > **Why this distinction.** Shimmer implies "this content is coming, expect something here". Spinner implies "wait for this action". Misusing either creates anxiety: a spinner on a page load feels like the app is hung; a shimmer on a save action feels like the button isn't working.
 
@@ -2995,19 +3140,19 @@ xychart-beta
     bar [0, 100, 300, 600, 1500]
 ```
 
-| Element | Duration | Easing | Notes |
-|---|---|---|---|
-| Page transition | 300 ms | Emphasized | Slide + fade |
-| Bottom sheet in/out | 250 ms | Standard | With drag support |
-| Dialog in | 150 ms | Decelerate | Scale 0.9 → 1.0 |
-| Dialog out | 100 ms | Accelerate | Fade |
-| Snackbar in | 200 ms | Decelerate | Slide up |
-| Snackbar out | 150 ms | Accelerate | Fade |
-| Button press | 100 ms | Standard | Scale 1 → 0.98 |
-| Score counter tween | 800 ms | Decelerate | Cubic ease-out |
-| Achievement unlock burst | 1500 ms | Emphasized | Confetti + scale |
-| Hero animation (game → detail) | 400 ms | Emphasized | Spring |
-| Card press | 80 ms | Standard | Elevation drop |
+| Element                        | Duration | Easing     | Notes             |
+| ------------------------------ | -------- | ---------- | ----------------- |
+| Page transition                | 300 ms   | Emphasized | Slide + fade      |
+| Bottom sheet in/out            | 250 ms   | Standard   | With drag support |
+| Dialog in                      | 150 ms   | Decelerate | Scale 0.9 → 1.0   |
+| Dialog out                     | 100 ms   | Accelerate | Fade              |
+| Snackbar in                    | 200 ms   | Decelerate | Slide up          |
+| Snackbar out                   | 150 ms   | Accelerate | Fade              |
+| Button press                   | 100 ms   | Standard   | Scale 1 → 0.98    |
+| Score counter tween            | 800 ms   | Decelerate | Cubic ease-out    |
+| Achievement unlock burst       | 1500 ms  | Emphasized | Confetti + scale  |
+| Hero animation (game → detail) | 400 ms   | Emphasized | Spring            |
+| Card press                     | 80 ms    | Standard   | Elevation drop    |
 
 ### 22.2 Page transitions
 
@@ -3019,35 +3164,38 @@ xychart-beta
 ### 22.3 Hero animations
 
 Eligible pairs:
+
 - Game tile icon → Game Detail hero icon
 - Avatar (Profile) → Avatar picker
 - Achievement badge (list) → Achievement detail
 
 **Rules:**
+
 - One hero animation per screen transition
 - Disable when `reduceMotion` is on
 - Source and destination `Hero` tags must be unique across the active route
 
 ### 22.4 Game-specific animations
 
-| Game | Animation | When | Notes |
-|---|---|---|---|
-| Tic Tac Toe | X/O draw-in | Mark placed | 200 ms, ease-out, slight scale-up |
-| Tic Tac Toe | Strike-through line | Win condition | Draw across 3 winning cells |
-| Hangman | Letter flip | Each guess | 250 ms, 3D rotate |
-| Hangman | Gallows draw-in | Each wrong | Sequential line draws |
-| RPS | Hand shake → reveal | Play | 400 ms anticipation → reveal |
-| RPS | Result burst | Win/loss/draw | Different colours per outcome |
-| MineSneeker | Cell reveal sweep | On flag victory | Cascade from first revealed |
-| Snake | Eat food pulse | Food eaten | Scale 1 → 1.4 → 1.0 + colour flash |
-| Snake | Death shake | Collision | Horizontal shake 200 ms |
-| Block Drop | Line clear flash | Line cleared | White flash → row collapse |
-| Block Drop | Hard drop | Swipe down | Block travels instantly to bottom |
-| Sky Hop (v1.1) | Bird flap | Tap | Wing frames swap, 60 ms |
+| Game           | Animation           | When            | Notes                              |
+| -------------- | ------------------- | --------------- | ---------------------------------- |
+| Tic Tac Toe    | X/O draw-in         | Mark placed     | 200 ms, ease-out, slight scale-up  |
+| Tic Tac Toe    | Strike-through line | Win condition   | Draw across 3 winning cells        |
+| Hangman        | Letter flip         | Each guess      | 250 ms, 3D rotate                  |
+| Hangman        | Gallows draw-in     | Each wrong      | Sequential line draws              |
+| RPS            | Hand shake → reveal | Play            | 400 ms anticipation → reveal       |
+| RPS            | Result burst        | Win/loss/draw   | Different colours per outcome      |
+| MineSneeker    | Cell reveal sweep   | On flag victory | Cascade from first revealed        |
+| Snake          | Eat food pulse      | Food eaten      | Scale 1 → 1.4 → 1.0 + colour flash |
+| Snake          | Death shake         | Collision       | Horizontal shake 200 ms            |
+| Block Drop     | Line clear flash    | Line cleared    | White flash → row collapse         |
+| Block Drop     | Hard drop           | Swipe down      | Block travels instantly to bottom  |
+| Sky Hop (v1.1) | Bird flap           | Tap             | Wing frames swap, 60 ms            |
 
 ### 22.5 When to disable
 
 Disable ALL non-essential motion when `MediaQuery.disableAnimations` is true. Exceptions:
+
 - Audio playback (sound is not motion)
 - Score numbers (instant value swap)
 - Necessary visual state changes (selected checkbox)
@@ -3154,20 +3302,21 @@ On every score gain (Snake food, Block Drop line clear, RPS win):
 
 ### 24.5 Confirmation dialogs
 
-| Action | Confirmation needed? |
-|---|---|
-| Sign out | Yes |
-| Delete account | Yes + typed email |
-| Reset progress | Yes |
-| Remove Ads IAP | Yes (Play Store dialog) |
-| Clear cache | Yes |
+| Action          | Confirmation needed?       |
+| --------------- | -------------------------- |
+| Sign out        | Yes                        |
+| Delete account  | Yes + typed email          |
+| Reset progress  | Yes                        |
+| Remove Ads IAP  | Yes (Play Store dialog)    |
+| Clear cache     | Yes                        |
 | Switch language | Yes (with restart warning) |
-| Toggle theme | No (immediate) |
-| Mute sound | No (immediate) |
+| Toggle theme    | No (immediate)             |
+| Mute sound      | No (immediate)             |
 
 ### 24.6 Copy guidelines (EN / HI / BN)
 
 **Voice:**
+
 - Active voice, present tense
 - "Sign in", not "Authentication required"
 - Short verbs: "Play", "Save", "Share" — never "Initiate", "Process"
@@ -3175,6 +3324,7 @@ On every score gain (Snake food, Block Drop line clear, RPS win):
 **English tone:** friendly, calm, second person.
 
 **Hindi (हिन्दी):**
+
 - Use हिंदी over संस्कृत-derived formal words
   - "खेलें" (khelen — play), not "क्रीड़ा करें"
   - "सहेजें" (sahejen — save), not "संरक्षित करें"
@@ -3182,16 +3332,19 @@ On every score gain (Snake food, Block Drop line clear, RPS win):
 - Numbers: use Western Arabic numerals (1, 2, 3), not Devanagari (१, २, ३) — Indians are bilingual in this regard
 
 **Bengali (বাংলা):**
+
 - Use চলিত (cholito — modern) Bengali, not সাধু (sadhu — literary)
 - আপনি (apni) for honour, never তুমি (tumi)
 - Conjuncts: ক্ষ, য, ন্ত — test rendering carefully
 
 **Length:**
+
 - Headlines ≤ 5 words in all languages
 - Body copy ≤ 25 words per paragraph
 - Buttons: 1–3 words max
 
 **Forbidden across all languages:**
+
 - "Free" (use "At no cost" or "Complimentary" if needed)
 - "Just" (minimises)
 - "Easy" (dismissive)
@@ -3199,15 +3352,15 @@ On every score gain (Snake food, Block Drop line clear, RPS win):
 
 ### 24.7 Edge cases
 
-| Case | Behaviour |
-|---|---|
-| User backgrounds mid-game | Pause; resume on foreground |
-| User backgrounds during sync | Continue in background; show "Syncing" on return |
-| Network drops mid-game | Continue offline; queue score |
-| OTP SMS delayed | 60 s resend cooldown; never auto-fill wrong code |
+| Case                                | Behaviour                                                |
+| ----------------------------------- | -------------------------------------------------------- |
+| User backgrounds mid-game           | Pause; resume on foreground                              |
+| User backgrounds during sync        | Continue in background; show "Syncing" on return         |
+| Network drops mid-game              | Continue offline; queue score                            |
+| OTP SMS delayed                     | 60 s resend cooldown; never auto-fill wrong code         |
 | User denies notification permission | Show snackbar explaining why; never re-prompt in-session |
-| User denies storage permission | Disable Data Export; show banner in Settings |
-| App killed during purchase | Restore on next launch via Play Store API |
+| User denies storage permission      | Disable Data Export; show banner in Settings             |
+| App killed during purchase          | Restore on next launch via Play Store API                |
 
 ---
 
@@ -3230,36 +3383,43 @@ gantt
 ### 25.1 P1 (v1.1 — Q3 2026)
 
 **Themes & skins**
+
 - A theming system allowing community-contributed colour palettes
 - Locked behind a "Skin marketplace" (subject to COPPA review — kids see curated only)
 - Each skin defines: primary, secondary, surface, game accent, mascot variant
 - Tokens in Section 6 already structured for this
 
 **Friends & social**
+
 - Avatar-only friends list (no chat, no DMs — COPPA)
 - "Recently played with" list
 - Send a "high-five" (single emoji reaction; no free text)
 
 **Leaderboards v1**
+
 - Global weekly leaderboard per game
 - Country-level leaderboard (India states initially)
 
 **Sound & music**
+
 - Background music per game (toggleable)
 - Original chiptune-style composer briefs
 
 ### 25.2 P2 (v1.2 — Q4 2026)
 
 **Material You dynamic colour**
+
 - Honour user's wallpaper to derive scheme
 - Toggle in Settings (default on for Android 12+)
 - Test against all per-game accents for clashes
 
 **Tablet & foldable polish**
+
 - True split-screen: chat-less co-op (same device two-player) on foldables
 - Landscape phone variants for Snake, Block Drop
 
 **Accessibility v2**
+
 - Colour-blind mode picker (Protanopia / Deuteranopia / Tritanopia palettes)
 - Custom font scaling beyond `MediaQuery.textScaler` clamp
 - High-contrast theme expansion
@@ -3267,29 +3427,35 @@ gantt
 ### 25.3 P3 (v2.0 — 2027)
 
 **iOS port**
+
 - Recreate on Flutter iOS; honour iOS HIG for navigation (Tab Bar bottom), back gestures, sheets
 - App icon redesign for rounded-square platform mask
 - Apple auth flow (Section 13.6)
 
 **Web preview**
+
 - Playable games on `play.gamesplatform.app` (no install)
 - Smaller touch targets OK on desktop
 - Keyboard-first controls
 
 **Community themes**
+
 - User-submitted palettes, reviewed for accessibility (4.5:1 contrast auto-check)
 - Token-based theming engine
 - Skin marketplace with creator payouts (subject to legal review)
 
 **i18n expansion**
+
 - Tamil, Telugu, Marathi (next 3 by Hindi-belt adoption in our beta)
 - Right-to-left: Urdu (P3, with full RTL audit)
 
 **Voice control**
+
 - Voice Access-compatible semantics labels
 - Game commands: "pause", "restart", "drop"
 
 **Widgets (Android home screen)**
+
 - "Today\'s high score" widget
 - "Daily challenge" widget
 
@@ -3297,46 +3463,46 @@ gantt
 
 ## Appendix A — Wireframe index (all screens)
 
-| # | Screen | Section |
-|---|---|---|
-| 1 | Onboarding 1 (Welcome) | 12.3 |
-| 2 | Onboarding 2 (Six games) | 12.4 |
-| 3 | Onboarding 3 (Safe) | 12.5 |
-| 4 | Sign In | 13.1 |
-| 5 | Sign Up | 13.2 (form variant) |
-| 6 | Forgot Password | 13.3 (single-field variant) |
-| 7 | Guest Info | 13.4 |
-| 8 | Home | 14.2 |
-| 9 | All Games | 15.1 |
-| 10 | Category | 15.2 |
-| 11 | Game Detail | 15.3 |
-| 12 | Profile | 16.1 |
-| 13 | Edit Profile | 16.2 |
-| 14 | Avatar Picker | 16.3 |
-| 15 | Statistics | 16.4 |
-| 16 | Settings | 17.1 |
-| 17 | Theme Settings | 17.3 |
-| 18 | Sound Settings | 17.4 |
-| 19 | Haptics Settings | 17.5 |
-| 20 | Language Settings | 17.6 |
-| 21 | Notifications Settings | 17.7 |
-| 22 | Privacy Settings | 17.8 |
-| 23 | Data Export | 17.9 |
-| 24 | Sign Out Confirm | 17.10 |
-| 25 | Achievements list | 18.1 |
-| 26 | Achievement Detail | 18.2 |
-| 27 | Error: No internet | 19.1 |
-| 28 | Error: Game failed | 19.2 |
-| 29 | Error: Purchase failed | 19.4 |
-| 30 | Error: Generic | 19.5 |
-| 31 | Empty: No games played | 14.4 / 12.5 |
-| 32 | Empty: No friends | 20.2 |
-| 33 | Empty: No notifications | 20.3 |
-| 34 | Empty: Leaderboard | 20.4 |
-| 35 | Loading: Splash | 21.1 |
-| 36 | Loading: Game | 21.2 |
-| 37 | Loading: Skeleton | 21.4 |
-| 38 | Game Result | (in each game) |
+| #   | Screen                   | Section                     |
+| --- | ------------------------ | --------------------------- |
+| 1   | Onboarding 1 (Welcome)   | 12.3                        |
+| 2   | Onboarding 2 (Six games) | 12.4                        |
+| 3   | Onboarding 3 (Safe)      | 12.5                        |
+| 4   | Sign In                  | 13.1                        |
+| 5   | Sign Up                  | 13.2 (form variant)         |
+| 6   | Forgot Password          | 13.3 (single-field variant) |
+| 7   | Guest Info               | 13.4                        |
+| 8   | Home                     | 14.2                        |
+| 9   | All Games                | 15.1                        |
+| 10  | Category                 | 15.2                        |
+| 11  | Game Detail              | 15.3                        |
+| 12  | Profile                  | 16.1                        |
+| 13  | Edit Profile             | 16.2                        |
+| 14  | Avatar Picker            | 16.3                        |
+| 15  | Statistics               | 16.4                        |
+| 16  | Settings                 | 17.1                        |
+| 17  | Theme Settings           | 17.3                        |
+| 18  | Sound Settings           | 17.4                        |
+| 19  | Haptics Settings         | 17.5                        |
+| 20  | Language Settings        | 17.6                        |
+| 21  | Notifications Settings   | 17.7                        |
+| 22  | Privacy Settings         | 17.8                        |
+| 23  | Data Export              | 17.9                        |
+| 24  | Sign Out Confirm         | 17.10                       |
+| 25  | Achievements list        | 18.1                        |
+| 26  | Achievement Detail       | 18.2                        |
+| 27  | Error: No internet       | 19.1                        |
+| 28  | Error: Game failed       | 19.2                        |
+| 29  | Error: Purchase failed   | 19.4                        |
+| 30  | Error: Generic           | 19.5                        |
+| 31  | Empty: No games played   | 14.4 / 12.5                 |
+| 32  | Empty: No friends        | 20.2                        |
+| 33  | Empty: No notifications  | 20.3                        |
+| 34  | Empty: Leaderboard       | 20.4                        |
+| 35  | Loading: Splash          | 21.1                        |
+| 36  | Loading: Game            | 21.2                        |
+| 37  | Loading: Skeleton        | 21.4                        |
+| 38  | Game Result              | (in each game)              |
 
 ---
 
@@ -3361,18 +3527,18 @@ When implementing, build components in this order (each one is consumed by the n
 
 ## Appendix C — Glossary
 
-| Term | Meaning |
-|---|---|
-| **M3** | Material Design 3, Google's design system; Flutter supports it natively |
-| **Token** | A named design value (colour, spacing, etc.) shared across the app |
-| **CVD** | Colour Vision Deficiency (colour blindness) |
-| **IAP** | In-App Purchase |
-| **COPPA** | US Children's Online Privacy Protection Act |
-| **GDPR-K** | GDPR's specific protections for children |
-| **PIE model** | Per `TRD.md §4`: Persistent-Indexed-Eventually-consistent |
-| **Mascot** | Pi the fox (Section 2.5) |
-| **Hero animation** | Shared-element transition between two screens |
-| **Semantics** | Flutter widget providing screen-reader information |
+| Term               | Meaning                                                                 |
+| ------------------ | ----------------------------------------------------------------------- |
+| **M3**             | Material Design 3, Google's design system; Flutter supports it natively |
+| **Token**          | A named design value (colour, spacing, etc.) shared across the app      |
+| **CVD**            | Colour Vision Deficiency (colour blindness)                             |
+| **IAP**            | In-App Purchase                                                         |
+| **COPPA**          | US Children's Online Privacy Protection Act                             |
+| **GDPR-K**         | GDPR's specific protections for children                                |
+| **PIE model**      | Per `TRD.md §4`: Persistent-Indexed-Eventually-consistent               |
+| **Mascot**         | Pi the fox (Section 2.5)                                                |
+| **Hero animation** | Shared-element transition between two screens                           |
+| **Semantics**      | Flutter widget providing screen-reader information                      |
 
 ---
 
